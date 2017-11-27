@@ -18,4 +18,13 @@ describe('DistrictRepository iteration 1 - part 2', () =>  {
     expect(district.findAllMatches('df').length).toBe(0);
   });
 
+  test('findAllMatches returns matches in an array, case insensitive', () => {
+    expect(district.findAllMatches('ar').length).toBe(16);
+  });
+
+  test('findAllMatches returns expected data', () => {
+    let expectedData = {"EAST YUMA COUNTY RJ-2": {"2004": 0, "2005": 0, "2006": 0, "2007": 0, "2008": 0, "2009": 0, "2010": 0, "2011": 0, "2012": 0, "2013": 0, "2014": 0}}
+    expect(district.findAllMatches('yuma')[0]).toEqual(expectedData)
+  })
+
 });
