@@ -48,4 +48,11 @@ export default class DistrictRepository {
       data: foundData[Object.keys(foundData)[0]]
     };
   }
-}
+
+  findAllMatches(query) {
+    let regex = new RegExp(query, 'gi');
+
+    let matches = this.data.filter(dataPoint => regex.test(Object.keys(dataPoint)[0]));
+    return matches;
+  }
+ }
