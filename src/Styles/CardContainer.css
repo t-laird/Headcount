@@ -1,4 +1,22 @@
 .CardContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: flex-start;
+  margin: 0px auto;
+  width: 1300px; }
+
+@media screen and (max-width: 1350px) {
+  .CardContainer {
+    width: 1040px; } }
+
+@media screen and (max-width: 1090px) {
+  .CardContainer {
+    width: 780px; } }
+
+@media screen and (max-width: 830px) {
+  .CardContainer {
+    width: 520px; } }
+
+@media screen and (max-width: 570px) {
+  .CardContainer {
+    width: 260px; } }
