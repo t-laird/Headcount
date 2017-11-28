@@ -16,13 +16,12 @@ class App extends Component {
 
     this.state = {
       cards: this.cleanData.data, 
-      query: '',
       comparison: []
     }
   }
 
   updateQuery = (value) => {
-    this.setState( {query: value, cards: this.cleanData.findAllMatches(value)} );
+    this.setState( { cards: this.cleanData.findAllMatches(value)} );
   }
 
   render() {
