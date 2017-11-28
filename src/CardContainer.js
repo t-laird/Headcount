@@ -2,10 +2,14 @@ import React from 'react';
 import Card from './Card';
 
 function CardContainer ({cards}) {
-  const mappedCards = cards.map((card) => {
+  const mappedCards = cards.map((card, index) => {
+    const location = Object.keys(card)[0];
     return (
-      <div>hello</div>
-      // <Card />
+      <Card 
+        key={`card-${index}`}
+        data={card[location]}
+        district={location}
+      />
     )
   })
 
