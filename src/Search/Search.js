@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Styles/Search.css';
+import './Search.css';
 
 class Search extends Component {
   constructor() {
@@ -11,7 +11,7 @@ class Search extends Component {
     }
   }
 
-  expandSearch = () => {
+  expandSearch() {
     if (this.state.expanded === 'Search expanded') {
       this.setState({
         expanded: 'Search'
@@ -28,7 +28,7 @@ class Search extends Component {
   render() {
     return (
       <div className={this.state.expanded}>
-        <i className="icon-search" onClick={this.expandSearch}></i>
+        <i className="icon-search" onClick={()=> {this.expandSearch()}}></i>
         <input 
           type='text' 
           // value={this.state.value}

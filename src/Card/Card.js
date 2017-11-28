@@ -1,5 +1,5 @@
 import React from 'react';
-import './Styles/Card.css';
+import './Card.css';
 
 const Card = (props) => {
   const mappedData = Object.keys(props.data).map((dataPoint, index) => {

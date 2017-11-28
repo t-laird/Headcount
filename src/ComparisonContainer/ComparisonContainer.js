@@ -1,8 +1,8 @@
 import React from 'react';
-import './Styles/ComparisonContainer.css';
-import Card from './Card';
+import './ComparisonContainer.css';
+import Card from '../Card/Card';
 
-function ComparisonContainer (props) {
+const ComparisonContainer = (props) => {
   return (
     <div className="ComparisonContainer">
       <h3>Click Two Cards to Compare the School Districts</h3>

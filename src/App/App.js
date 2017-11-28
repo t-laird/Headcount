@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import kinderData from '../data/kindergartners_in_full_day_program.js';
-import Header from './Header';
-import Search from './Search';
-import ComparisonContainer from './ComparisonContainer';
-import CardContainer from './CardContainer';
-import DistrictRepository from './helper';
-import './App.css'; 
+import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import Header from '../Header/Header';
+import Search from '../Search/Search';
+import ComparisonContainer from '../ComparisonContainer/ComparisonContainer';
+import CardContainer from '../CardContainer/CardContainer';
+import DistrictRepository from '../helper';
 
 
 class App extends Component {
@@ -18,9 +17,10 @@ class App extends Component {
       cards: this.cleanData.data, 
       comparison: []
     }
+    // this.updateQuery = this.updateQuery.bind(this);
   }
 
-  updateQuery = (value) => {
+  updateQuery(value) {
     this.setState( { cards: this.cleanData.findAllMatches(value)} );
   }
 

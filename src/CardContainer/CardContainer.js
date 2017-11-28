@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from './Card';
-import './Styles/CardContainer.css';
+import Card from '../Card/Card';
+import './CardContainer.css';
 
-function CardContainer ({cards}) {
+const CardContainer = ({cards}) => {
   const mappedCards = cards.map((card, index) => {
     const location = Object.keys(card)[0];
     return (
