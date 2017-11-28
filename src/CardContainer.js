@@ -10,6 +10,7 @@ function CardContainer ({cards}) {
         key={`card-${index}`}
         data={card[location]}
         district={location}
+        type={"Card"}
       />
     )
   })
