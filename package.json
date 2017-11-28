@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "eslint": "^4.12.0",
+    "eslint-plugin-react": "^7.5.1",
     "react-scripts": "0.9.0"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/Styles/ -o src/Styles/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/Styles/ -o src/Styles/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar src/Styles/ -o src/Styles/ --watch --recursive",
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/*.js"
   }
 }
