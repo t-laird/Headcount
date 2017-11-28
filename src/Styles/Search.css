@@ -1,1 +1,25 @@
 @import url(../../fontello-e98b1dbc/css/searchicon.css);
+.Search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0px auto;
+  width: 80%;
+  font-size: 35px; }
+  .Search input {
+    font-size: 35px;
+    padding-left: 5px;
+    height: 50px;
+    width: 0px;
+    border: none;
+    box-sizing: border-box;
+    cursor: default;
+    transition-duration: 0.8s; }
+  .Search i {
+    cursor: pointer;
+    width: 49px; }
+
+.Search.expanded input {
+  width: calc(100% - 49px);
+  cursor: auto;
+  border-bottom: 1px solid black; }
