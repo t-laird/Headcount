@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Styles/Search.css';
 
 class Search extends Component {
   constructor() {
@@ -19,6 +20,9 @@ class Search extends Component {
             this.props.updateQuery(e.target.value);
           }}
           placeholder='Search'/>
+          <i className="icon-search"></i>
+
+          
       </div>
     )
   }
