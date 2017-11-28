@@ -17,7 +17,7 @@ class App extends Component {
       cards: this.cleanData.data, 
       comparison: []
     }
-    // this.updateQuery = this.updateQuery.bind(this);
+    this.updateQuery = this.updateQuery.bind(this);
   }
 
   updateQuery(value) {
