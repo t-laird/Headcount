@@ -6,23 +6,37 @@ class Search extends Component {
     super();
 
     this.state = {
-      value: ''
+      value: '',
+      expanded: 'Search'
     }
-  } 
+  }
+
+  expandSearch = () => {
+    if (this.state.expanded === 'Search expanded') {
+      this.setState({
+        expanded: 'Search'
+      });
+    } else {
+      this.setState({
+        expanded: 'Search expanded'
+      });
+      this.searchInput.focus();
+
+    }
+  }
 
   render() {
     return (
-      <div className='Search'>
+      <div className={this.state.expanded}>
         <input 
           type='text' 
-          // value={this.state.value} 
+          // value={this.state.value}
+          ref={(sInput) => { this.searchInput = sInput; }}    
           onChange={(e) => {
             this.props.updateQuery(e.target.value);
           }}
           placeholder='Search'/>
-          <i className="icon-search"></i>
-
-          
+          <i className="icon-search" onClick={this.expandSearch}></i>     
       </div>
     )
   }
