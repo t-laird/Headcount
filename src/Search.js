@@ -36,9 +36,15 @@ class Search extends Component {
           onChange={(e) => {
             this.props.updateQuery(e.target.value);
           }}
-          placeholder='Search'/>
+          placeholder='Search'
+          onBlur={() => {
+            this.setState({
+              expanded: 'Search'
+            });
+          }}
+        />
       </div>
-    )
+    );
   }
 }
 
