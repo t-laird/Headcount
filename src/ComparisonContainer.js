@@ -4,7 +4,7 @@ function ComparisonContainer (props) {
 
   return (
     <div className="ComparisonContainer">
-      
+      compare
     </div>
   );
 }
