@@ -3,7 +3,9 @@ import React from 'react';
 function Card (props) {
   const mappedData = Object.keys(props.data).map((dataPoint, index) => {
     return (
-      <li key={`li-${index}`}>{dataPoint}: {props.data[dataPoint]}</li>
+      <li key={`li-${index}`}>
+        {dataPoint}: {props.data[dataPoint]}
+      </li>
     )
   })
 
