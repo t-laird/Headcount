@@ -1,4 +1,5 @@
 import React from 'react';
+import './Styles/Card.css';
 
 function Card (props) {
   const mappedData = Object.keys(props.data).map((dataPoint, index) => {
@@ -11,7 +12,7 @@ function Card (props) {
 
   return (
     <div className="Card">
-      <h3>{props.district}</h3>
+      <h4>{props.district}</h4>
       <ul>
         {mappedData}
       </ul>

@@ -1,0 +1,13 @@
+.Card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px darkgrey;
+  margin: 15px;
+  padding: 15px;
+  width: 200px; }
+  .Card ul {
+    margin: 0px;
+    padding: 3px; }
+  .Card li {
+    list-style: none;
+    width: 200px; }

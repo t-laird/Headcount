@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import './Styles/CardContainer.css';
 
 function CardContainer ({cards}) {
   const mappedCards = cards.map((card, index) => {
