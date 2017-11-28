@@ -1,0 +1,18 @@
+.ComparisonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px auto;
+  width: 780px; }
+  .ComparisonContainer h3 {
+    color: #ff4d4d;
+    width: 100%;
+    text-align: center; }
+
+@media screen and (max-width: 830px) {
+  .ComparisonContainer {
+    width: 520px; } }
+
+@media screen and (max-width: 570px) {
+  .ComparisonContainer {
+    width: 260px; } }

@@ -16,7 +16,8 @@ class App extends Component {
 
     this.state = {
       cards: this.cleanData.data, 
-      query: ''
+      query: '',
+      comparison: []
     }
   }
 
@@ -29,7 +30,7 @@ class App extends Component {
       <div>
         <Header />
         <Search updateQuery={this.updateQuery} />
-        <ComparisonContainer />
+        <ComparisonContainer comparison={this.state.comparison}/>
         <CardContainer cards={this.state.cards} />
       </div>
     );

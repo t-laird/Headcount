@@ -1,0 +1,24 @@
+.ComparisonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px auto;
+  width: 780px;
+  h3 {
+    color: lighten(red, 15%);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 830px){
+  .ComparisonContainer {
+    width: 520px;
+  }
+}
+
+@media screen and (max-width: 570px){
+  .ComparisonContainer {
+    width: 260px;
+  }
+}
