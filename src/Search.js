@@ -28,6 +28,7 @@ class Search extends Component {
   render() {
     return (
       <div className={this.state.expanded}>
+        <i className="icon-search" onClick={this.expandSearch}></i>
         <input 
           type='text' 
           // value={this.state.value}
@@ -36,7 +37,6 @@ class Search extends Component {
             this.props.updateQuery(e.target.value);
           }}
           placeholder='Search'/>
-          <i className="icon-search" onClick={this.expandSearch}></i>     
       </div>
     )
   }
