@@ -8,11 +8,17 @@ class Search extends Component {
       value: ''
     }
   } 
-  
+
   render() {
     return (
       <div className='Search'>
-        <input type='text' value={this.state.value} placeholder='Search'/>
+        <input 
+          type='text' 
+          // value={this.state.value} 
+          onChange={(e) => {
+            this.props.updateQuery(e.target.value);
+          }}
+          placeholder='Search'/>
       </div>
     )
   }
