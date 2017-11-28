@@ -4,10 +4,16 @@
   box-shadow: 5px 5px 5px 5px darkgrey;
   margin: 15px;
   padding: 15px;
-  width: 200px; }
+  width: 200px;
+  box-sizing: border-box; }
+  .Card h4 {
+    height: 2em; }
   .Card ul {
     margin: 0px;
     padding: 3px; }
     .Card ul li {
       list-style: none;
       width: 200px; }
+
+.Card.Comparison {
+  border: 1px dashed black; }

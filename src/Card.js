@@ -1,7 +1,7 @@
 import React from 'react';
 import './Styles/Card.css';
 
-function Card (props) {
+const Card = (props) => {
   const mappedData = Object.keys(props.data).map((dataPoint, index) => {
     return (
       <li key={`li-${index}`}>
@@ -11,7 +11,7 @@ function Card (props) {
   })
 
   return (
-    <div className="Card">
+    <div className={props.type}>
       <h4>{props.district}</h4>
       <ul>
         {mappedData}
