@@ -55,4 +55,29 @@ export default class DistrictRepository {
     let matches = this.data.filter(dataPoint => regex.test(Object.keys(dataPoint)[0]));
     return matches;
   }
- }
+
+  findAverage(query) {
+    let searchedDist = this.findByName(query);
+    let numYears = Object.keys(searchedDist.data).length;
+    let totalScore = Object.keys(searchedDist.data).reduce((total, year) => {
+      total += searchedDist.data[year];
+      return total;
+    }, 0);
+    let average = totalScore/numYears;
+
+    return parseFloat(average.toFixed(3));
+  }
+
+  compareDistrictAverages(dist1, dist2) {
+    let dist1Avg = this.findAverage(dist1);
+    let dist2Avg = this.findAverage(dist2);
+    let difference = dist1Avg > dist2Avg ? 
+      dist2Avg/dist1Avg : 
+      dist1Avg/dist2Avg;
+        
+    return {
+      [dist1.toUpperCase()]: dist1Avg, 
+      [dist2.toUpperCase()]: dist2Avg, 
+      compared: parseFloat(difference.toFixed(3))};
+  }
+}
