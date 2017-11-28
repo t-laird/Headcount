@@ -8,6 +8,6 @@
   .Card ul {
     margin: 0px;
     padding: 3px; }
-  .Card li {
-    list-style: none;
-    width: 200px; }
+    .Card ul li {
+      list-style: none;
+      width: 200px; }
