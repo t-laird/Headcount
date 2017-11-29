@@ -11,7 +11,7 @@ const Card = (props) => {
   })
 
   return (
-    <div className={props.type}>
+    <div onClick={() => {props.selectCard(props.district)}} className={props.type}>
       <h4>{props.district}</h4>
       <ul>
         {mappedData}
