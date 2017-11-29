@@ -6,14 +6,15 @@ class Search extends Component {
     super();
 
     this.state = {
-      expanded: 'Search'
+      expanded: 'Search',
+      value: ''
     }
   }
 
   expandSearch() {
     if (this.state.expanded === 'Search expanded') {
       this.setState({
-        expanded: 'Search'
+        expanded: 'Search',
       });
     } else {
       this.setState({
