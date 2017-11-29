@@ -17,12 +17,23 @@
       width: 200px;
     }
   }
+  cursor: pointer;
+  &:hover {
+    box-shadow: 5px 5px 5px 5px black;  
+  }
 }
 
 .selected {
   background-color: lighten(red, 40%);
+
 }
 
 .Card.Comparison {
   border: 1px dashed black;
+  background-color: lightgrey;
+}
+
+.Card.compared {
+  border: 1px dashed black;
+  text-align: center;
 }
