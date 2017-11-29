@@ -56,8 +56,4 @@ describe('Search test', () => {
     expect(renderedSearch.state('expanded')).toEqual(finalExpectedClass);
     expect(renderedSearch.find('.expanded').length).toEqual(0);    
   });
-  
-
-
-
 });
