@@ -18,19 +18,38 @@ class App extends Component {
       comparison: []
     }
     this.updateQuery = this.updateQuery.bind(this);
+    this.selectCard = this.selectCard.bind(this);
   }
 
   updateQuery(value) {
-    this.setState( { cards: this.cleanData.findAllMatches(value)} );
+    this.setState( {cards: this.cleanData.findAllMatches(value)} );
+  }
+
+  selectCard(location) {
+    const locationIndex = this.state.comparison.indexOf(location)
+
+    if (this.state.comparison.length < 2 && locationIndex === -1) {
+      this.setState( {comparison: [...this.state.comparison, location]} )
+    } else if (locationIndex !== -1) {
+      let comparison = 
+        [...this.state.comparison.slice(0, locationIndex), 
+         ...this.state.comparison.slice(locationIndex + 1)];
+      this.setState( {comparison} );
+    }
   }
 
   render() {
+    console.log(this.state.comparison)
     return (
       <div>
         <Header />
         <Search updateQuery={this.updateQuery} />
         <ComparisonContainer comparison={this.state.comparison}/>
-        <CardContainer cards={this.state.cards} />
+        <CardContainer 
+          cards={this.state.cards}
+          comparison={this.state.comparison}
+          selectCard={this.selectCard} 
+        />
       </div>
     );
   }
