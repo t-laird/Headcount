@@ -10,6 +10,7 @@
   display: flex;
   cursor: pointer; }
   .Card div {
+    width: 100%;
     padding: 15px; }
   .Card h4 {
     height: 2em;
