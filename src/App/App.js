@@ -39,12 +39,14 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.comparison)
     return (
       <div>
         <Header />
         <Search updateQuery={this.updateQuery} />
-        <ComparisonContainer comparison={this.state.comparison}/>
+        <ComparisonContainer
+          cards={this.state.cards} 
+          selectCard={this.selectCard} 
+          comparison={this.state.comparison}/>
         <CardContainer 
           cards={this.state.cards}
           comparison={this.state.comparison}
