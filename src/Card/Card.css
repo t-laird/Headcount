@@ -5,7 +5,8 @@
   margin: 15px;
   padding: 15px;
   width: 200px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  cursor: pointer; }
   .Card h4 {
     height: 2em; }
   .Card ul {
@@ -14,9 +15,16 @@
     .Card ul li {
       list-style: none;
       width: 200px; }
+  .Card:hover {
+    box-shadow: 5px 5px 5px 5px black; }
 
 .selected {
   background-color: #ffcccc; }
 
 .Card.Comparison {
-  border: 1px dashed black; }
+  border: 1px dashed black;
+  background-color: lightgrey; }
+
+.Card.compared {
+  border: 1px dashed black;
+  text-align: center; }

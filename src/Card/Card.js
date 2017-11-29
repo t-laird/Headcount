@@ -12,10 +12,22 @@ const Card = (props) => {
 
   return (
     <div onClick={() => {props.selectCard(props.district)}} className={props.type}>
-      <h4>{props.district}</h4>
-      <ul>
-        {mappedData}
-      </ul>
+    {
+      props.district &&
+      <div>
+
+        <h4>{props.district}</h4>
+        <ul>
+          {mappedData}
+        </ul>
+      </div>
+
+}
+    {
+      (props.type === "Card compared") &&
+
+      <h1>Click Two Cards to Compare Them</h1>
+    }
     </div>
   );
 }
