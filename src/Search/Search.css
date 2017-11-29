@@ -3,8 +3,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 0px auto;
+  margin: 0px auto 30px;
   width: 80%;
+  max-width: 750px;
   font-size: 35px; }
   .Search input {
     font-size: 35px;
