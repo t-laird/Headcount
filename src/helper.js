@@ -25,7 +25,7 @@ export default class DistrictRepository {
       return {[location]: dataObj[location]};
     });
 
-   this.data = dataArray;    
+    this.data = dataArray;    
   }
 
   findByName(query) {
