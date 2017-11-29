@@ -36,7 +36,7 @@
 .selected {
   background-color: #ffcccc; }
 
-.Card.Comparison {
+.Card.comparison {
   border: 1px dashed black;
   background-color: lightgrey;
   height: 270px; }

@@ -38,6 +38,8 @@ const ComparisonContainer = (props) => {
       ? props.compareCards(mappedCards[0].props.district,                               mappedCards[1].props.district) 
       : null;
 
+  console.log(comparisonCard);
+  
   return (
     <div className="ComparisonContainer">
       <h3>Click Two Cards to Compare the School Districts</h3>
@@ -48,7 +50,7 @@ const ComparisonContainer = (props) => {
       {
         !mappedCards[0] &&
         <Card 
-          type="Card Comparison" 
+          type="Card comparison" 
           data={{}}
         />
       }
@@ -77,7 +79,7 @@ const ComparisonContainer = (props) => {
       }
       {
         !mappedCards[1] &&
-        <Card type="Card Comparison" data={{}}/>
+        <Card type="Card comparison" data={{}}/>
       }
     </div>
   );
