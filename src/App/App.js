@@ -15,22 +15,53 @@ class App extends Component {
 
     this.state = {
       cards: this.cleanData.data, 
-      comparison: []
+      comparison: [null, null]
     }
     this.updateQuery = this.updateQuery.bind(this);
+    this.selectCard = this.selectCard.bind(this);
+    this.compareCards = this.compareCards.bind(this);
   }
 
   updateQuery(value) {
-    this.setState( { cards: this.cleanData.findAllMatches(value)} );
+    this.setState( {cards: this.cleanData.findAllMatches(value)} );
   }
 
-  render() {
+  selectCard(location) {
+    const locationIndex = this.state.comparison.indexOf(location);
+    
+    if (this.state.comparison[0] === null && locationIndex === -1) {
+      this.setState( {comparison: [location, this.state.comparison[1]]} )
+    } else if (this.state.comparison[1] === null && locationIndex === -1) {      
+      this.setState( {comparison: [this.state.comparison[0], location]} )      
+    } else if (locationIndex !== -1) {
+      let comparison = 
+        [...this.state.comparison.slice(0, locationIndex), null, 
+         ...this.state.comparison.slice(locationIndex + 1)];
+      this.setState( {comparison} );
+    }
+    this.updateQuery('');
+  }
+
+  compareCards(district1, district2) {
+    return this.cleanData.compareDistrictAverages(district1, district2);  
+  }
+
+  render() {    
     return (
       <div>
         <Header />
         <Search updateQuery={this.updateQuery} />
-        <ComparisonContainer comparison={this.state.comparison}/>
-        <CardContainer cards={this.state.cards} />
+        <ComparisonContainer
+          selectCard={this.selectCard} 
+          compareCards={this.compareCards}
+          comparison={this.state.comparison}
+          cards={this.cleanData.findAllMatches('')} 
+        />
+        <CardContainer 
+          cards={this.state.cards}
+          comparison={this.state.comparison}
+          selectCard={this.selectCard} 
+        />
       </div>
     );
   }

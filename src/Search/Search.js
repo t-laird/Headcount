@@ -29,15 +29,19 @@ class Search extends Component {
       <div className={this.state.expanded}>
         <i className="icon-search" onClick={()=> {this.expandSearch()}}></i>
         <input 
-          type='text' 
+          type='text'
+          value={this.state.value}
           ref={(sInput) => { this.searchInput = sInput; }}    
           onChange={(e) => {
+            this.setState( {value: e.target.value} )
             this.props.updateQuery(e.target.value);
           }}
           placeholder='Search'
           onBlur={() => {
+            // this.props.updateQuery('');
             this.setState({
-              expanded: 'Search'
+              expanded: 'Search',
+              value: ''
             });
           }}
         />
