@@ -5,12 +5,12 @@ import { shallow, mount } from 'enzyme';
 
 describe('ComparisonContainer test', () => {
   it('should render the correct components', () => {
-    const renderedComparisonContainer = shallow(<ComparisonContainer cards={[]}/>);
+    const renderedComparisonContainer = shallow(<ComparisonContainer cards={[]} comparison={[null, null]} />);
     expect(renderedComparisonContainer.find('.ComparisonContainer').length).toEqual(1);
   })
 
   it('should match the ComparisonContainer snapshot', () => {
-    const renderedComparisonContainer = shallow(<ComparisonContainer cards={[]}/>);
+    const renderedComparisonContainer = shallow(<ComparisonContainer cards={[]} comparison={[null, null]}/>);
     expect(renderedComparisonContainer).toMatchSnapshot();
   })
 });
