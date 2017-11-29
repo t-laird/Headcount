@@ -3,18 +3,28 @@
   border-radius: 10px;
   box-shadow: 5px 5px 5px 5px darkgrey;
   margin: 15px;
-  padding: 15px;
+  padding: 0px;
   width: 200px;
+  min-width: 200px;
   box-sizing: border-box;
+  display: flex;
   cursor: pointer; }
+  .Card div {
+    padding: 15px; }
   .Card h4 {
-    height: 2em; }
-  .Card ul {
+    height: 2em;
     margin: 0px;
+    text-align: center;
+    width: 100%; }
+  .Card ul {
+    margin: 15px 0 0;
     padding: 3px; }
     .Card ul li {
-      list-style: none;
-      width: 200px; }
+      list-style: none; }
+    .Card ul .high {
+      color: blue; }
+    .Card ul .not-yet {
+      color: lightblue; }
   .Card:hover {
     box-shadow: 5px 5px 5px 5px black; }
 
@@ -23,7 +33,9 @@
 
 .Card.Comparison {
   border: 1px dashed black;
-  background-color: lightgrey; }
+  background-color: lightgrey;
+  min-width: 200px;
+  min-height: 300px; }
 
 .Card.compared {
   border: 1px dashed black;

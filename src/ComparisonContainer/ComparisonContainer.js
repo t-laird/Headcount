@@ -33,7 +33,11 @@ const ComparisonContainer = (props) => {
     )
   });
 
-  const comparisonCard = null;
+  const comparisonCard = (mappedCards[0] && mappedCards[1]) ?
+                        props.compareCards(mappedCards[0].props.district,
+                                           mappedCards[1].props.district) :
+                        null;
+console.log(comparisonCard);
 
   return (
     <div className="ComparisonContainer">
@@ -44,17 +48,27 @@ const ComparisonContainer = (props) => {
       }
       {
         !mappedCards[0] &&
-        <Card type="Card Comparison" data={{}}/>
+        <Card 
+          type="Card Comparison" 
+          data={{}}
+        />
       }
-
-
       {
         comparisonCard &&
-        null
+        <Card 
+          data={{}}
+          type="Card displayComparedData"
+          compareData={comparisonCard}
+          district1={mappedCards[0].props.district.toUpperCase()}
+          district2={mappedCards[1].props.district.toUpperCase()}
+        />
       }
       {
         !comparisonCard &&
-        <Card type="Card compared" data={{}}/>
+        <Card
+          type="Card compared"
+          data={{}}
+        />
       }
 
       
