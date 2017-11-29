@@ -3,7 +3,13 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ComparisonContainer
-    cards={Array []} />,
+    cards={Array []}
+    comparison={
+        Array [
+            null,
+            null,
+          ]
+    } />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -20,12 +26,15 @@ ShallowWrapper {
         <h3>
           Click Two Cards to Compare the School Districts
 </h3>,
+        null,
         <Card
           data={Object {}}
           type="Card Comparison" />,
+        null,
         <Card
           data={Object {}}
-          type="Card Comparison" />,
+          type="Card compared" />,
+        null,
         <Card
           data={Object {}}
           type="Card Comparison" />,
@@ -45,6 +54,7 @@ ShallowWrapper {
         "rendered": "Click Two Cards to Compare the School Districts",
         "type": "h3",
       },
+      null,
       Object {
         "instance": null,
         "key": undefined,
@@ -57,18 +67,20 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      null,
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
         "props": Object {
           "data": Object {},
-          "type": "Card Comparison",
+          "type": "Card compared",
         },
         "ref": null,
         "rendered": null,
         "type": [Function],
       },
+      null,
       Object {
         "instance": null,
         "key": undefined,
@@ -94,12 +106,15 @@ ShallowWrapper {
           <h3>
             Click Two Cards to Compare the School Districts
 </h3>,
+          null,
           <Card
             data={Object {}}
             type="Card Comparison" />,
+          null,
           <Card
             data={Object {}}
-            type="Card Comparison" />,
+            type="Card compared" />,
+          null,
           <Card
             data={Object {}}
             type="Card Comparison" />,
@@ -119,6 +134,7 @@ ShallowWrapper {
           "rendered": "Click Two Cards to Compare the School Districts",
           "type": "h3",
         },
+        null,
         Object {
           "instance": null,
           "key": undefined,
@@ -131,18 +147,20 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        null,
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
           "props": Object {
             "data": Object {},
-            "type": "Card Comparison",
+            "type": "Card compared",
           },
           "ref": null,
           "rendered": null,
           "type": [Function],
         },
+        null,
         Object {
           "instance": null,
           "key": undefined,

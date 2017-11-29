@@ -18,37 +18,17 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h4 />,
-        <ul>
-          
-</ul>,
+        undefined,
+        false,
+        false,
       ],
       "className": "Card",
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": undefined,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "h4",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [],
-        },
-        "ref": null,
-        "rendered": Array [],
-        "type": "ul",
-      },
+      undefined,
+      false,
+      false,
     ],
     "type": "div",
   },
@@ -59,37 +39,17 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h4 />,
-          <ul>
-            
-</ul>,
+          undefined,
+          false,
+          false,
         ],
         "className": "Card",
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "h4",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [],
-          },
-          "ref": null,
-          "rendered": Array [],
-          "type": "ul",
-        },
+        undefined,
+        false,
+        false,
       ],
       "type": "div",
     },

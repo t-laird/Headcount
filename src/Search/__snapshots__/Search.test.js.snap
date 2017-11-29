@@ -24,7 +24,8 @@ ShallowWrapper {
           onBlur={[Function]}
           onChange={[Function]}
           placeholder="Search"
-          type="text" />,
+          type="text"
+          value="" />,
       ],
       "className": "Search",
     },
@@ -51,6 +52,7 @@ ShallowWrapper {
           "onChange": [Function],
           "placeholder": "Search",
           "type": "text",
+          "value": "",
         },
         "ref": [Function],
         "rendered": null,
@@ -73,7 +75,8 @@ ShallowWrapper {
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Search"
-            type="text" />,
+            type="text"
+            value="" />,
         ],
         "className": "Search",
       },
@@ -100,6 +103,7 @@ ShallowWrapper {
             "onChange": [Function],
             "placeholder": "Search",
             "type": "text",
+            "value": "",
           },
           "ref": [Function],
           "rendered": null,
