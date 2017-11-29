@@ -6,7 +6,6 @@ class Search extends Component {
     super();
 
     this.state = {
-      value: '',
       expanded: 'Search'
     }
   }
@@ -31,7 +30,6 @@ class Search extends Component {
         <i className="icon-search" onClick={()=> {this.expandSearch()}}></i>
         <input 
           type='text' 
-          // value={this.state.value}
           ref={(sInput) => { this.searchInput = sInput; }}    
           onChange={(e) => {
             this.props.updateQuery(e.target.value);
