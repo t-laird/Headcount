@@ -25,6 +25,11 @@
     padding: 3px;
     li {
       list-style: none;
+      p {
+        display: inline-block;
+        width: 40px;
+        margin: 0;
+      }
     }
     .high {
       color: blue;
@@ -47,8 +52,7 @@
 .Card.Comparison {
   border: 1px dashed black;
   background-color: lightgrey;
-  min-width: 200px;
-  min-height: 300px;
+  height: 270px;
 }
 
 .Card.compared {

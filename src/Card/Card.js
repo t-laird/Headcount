@@ -6,7 +6,7 @@ const Card = (props) => {
     const liStyle = props.data[dataPoint] > 0.5 ? 'high' : 'not-yet';
     return (
       <li key={`li-${index}`} className={liStyle}>
-        {dataPoint}: {props.data[dataPoint]}
+        <p>{dataPoint}:</p> {props.data[dataPoint]}
       </li>
     )
   })
