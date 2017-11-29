@@ -3,7 +3,8 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0px auto;
-  width: 780px; }
+  width: 780px;
+  border: 1px dashed black; }
   .ComparisonContainer h3 {
     color: #ff4d4d;
     width: 100%;
