@@ -16,7 +16,7 @@
       width: 200px; }
 
 .selected {
-  background-color: magenta; }
+  background-color: #ffcccc; }
 
 .Card.Comparison {
   border: 1px dashed black; }
