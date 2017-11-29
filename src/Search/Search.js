@@ -29,7 +29,7 @@ class Search extends Component {
       <div className={this.state.expanded}>
         <i className="icon-search" onClick={()=> {this.expandSearch()}}></i>
         <input 
-          type='text' 
+          type='text'
           value={this.state.value}
           ref={(sInput) => { this.searchInput = sInput; }}    
           onChange={(e) => {
