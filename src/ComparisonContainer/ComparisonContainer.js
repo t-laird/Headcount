@@ -23,10 +23,23 @@ const ComparisonContainer = (props) => {
   return (
     <div className="ComparisonContainer">
       <h3>Click Two Cards to Compare the School Districts</h3>
-      {mappedCards}
+      {
+        mappedCards.length &&
+        mappedCards[0]
+      }
+      {
+        !mappedCards.length &&
+        <Card type="Card Comparison" data={{}}/>
+      }
       <Card type="Card Comparison" data={{}}/>
-      <Card type="Card Comparison" data={{}}/>
-      <Card type="Card Comparison" data={{}}/>
+      {
+        mappedCards[1] &&
+        mappedCards[1]
+      }
+      {
+        !mappedCards[1] &&
+        <Card type="Card Comparison" data={{}}/>
+      }
     </div>
   );
 }

@@ -44,7 +44,7 @@ class App extends Component {
         <Header />
         <Search updateQuery={this.updateQuery} />
         <ComparisonContainer
-          cards={this.state.cards} 
+          cards={this.cleanData.findAllMatches('')} 
           selectCard={this.selectCard} 
           comparison={this.state.comparison}/>
         <CardContainer 
