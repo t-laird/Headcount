@@ -1,3 +1,5 @@
+// @import url('https://fonts.googleapis.com/css?family=Squada+One');
+
 .Header {
   background-color: lighten(red, 15%);
   box-shadow: 5px 5px 5px 5px darkgrey;
@@ -8,9 +10,18 @@
   h1 {
     margin: 10px 0px;
     font-size: 90px;
+    // font-family: 'Squada One', sans-serif;
+    // letter-spacing: .06em;
+    // font-weight: 400; 
     span {
+      border: 1px solid black;
+      border-radius: 50%;
       font-size: 12px;
-      margin: 0px -25px;
+      padding: 5px;
+      margin: 0px -30px 0px -25px;
+      background-color: black;
+      color: lighten(red, 15%);
+      // letter-spacing: 0;
     }
   }
 }

@@ -19,6 +19,7 @@ class App extends Component {
     }
     this.updateQuery = this.updateQuery.bind(this);
     this.selectCard = this.selectCard.bind(this);
+    this.compareCards = this.compareCards.bind(this);
   }
 
   updateQuery(value) {
@@ -41,15 +42,21 @@ class App extends Component {
     this.updateQuery('');
   }
 
+  compareCards(district1, district2) {
+    return this.cleanData.compareDistrictAverages(district1, district2);  
+  }
+
   render() {    
     return (
       <div>
         <Header />
         <Search updateQuery={this.updateQuery} />
         <ComparisonContainer
-          cards={this.cleanData.findAllMatches('')} 
           selectCard={this.selectCard} 
-          comparison={this.state.comparison}/>
+          compareCards={this.compareCards}
+          comparison={this.state.comparison}
+          cards={this.cleanData.findAllMatches('')} 
+        />
         <CardContainer 
           cards={this.state.cards}
           comparison={this.state.comparison}
