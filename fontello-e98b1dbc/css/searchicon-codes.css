@@ -1,3 +1,7 @@
 
 .icon-search:before { content: '\e800'; } /* '' */
 .icon-spin5:before { content: '\e838'; } /* '' */
+.icon-blank:before { content: '\f0c8'; } /* '' */
+.icon-smile:before { content: '\f118'; } /* '' */
+.icon-frown:before { content: '\f119'; } /* '' */
+.icon-apple:before { content: '\f179'; } /* '' */
