@@ -1,3 +1,6 @@
+@import '../../fontello-e98b1dbc/css/searchicon.css';
+
+
 .Card {
   border: none;
   border-radius: 10px;
@@ -6,7 +9,7 @@
   padding: 0px;
   width: 200px;
   min-width: 200px;
-  // min-height: 300px;
+  transition: 1s;
   box-sizing: border-box;
   display: flex;
   div {
@@ -24,14 +27,37 @@
     border-radius: 10px 10px 0 0;
   }
   ul {
-    margin: 15px 0 0;
-    padding: 15px;
+    margin: 10px 0 0;
+    padding: 10px;
     li {
       list-style: none;
+      display: flex;
+      justify-content: space-around;
       p {
-        display: inline-block;
-        width: 40px;
+        // display: inline-block;
+        // width: 40px;
         margin: 0;
+      }
+
+      p.data {
+        width: 40px;
+        text-align: right;
+      }
+
+      i.low{
+        color: red;
+      }
+      i.low-average{
+        color: rgb(255, 77, 0);
+      }
+      i.average{
+        color: rgb(255, 183, 0);
+      }
+      i.high-average{
+        color: rgb(149, 255, 0);
+      }
+      i.high{
+        color: rgb(64, 176, 9);
       }
     }
     .high {
@@ -43,19 +69,20 @@
   }
   cursor: pointer;
   &:hover {
-    box-shadow: 5px 5px 5px 5px black;  
+    box-shadow: 1px 1px 1px 1px black;  
   }
 }
 
 .selected {
-  background-color: lighten(red, 40%);
+  background-color: lighten(red, 45%);
 
 }
 
 .Card.comparison {
   border: 1px dashed black;
   background-color: lightgrey;
-  height: 270px;
+  height: 279.25px;
+
 }
 
 .Card.compared {
@@ -65,7 +92,58 @@
 
 .Card.displayComparedData {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  
+  div {
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    
+    border-radius: 10px;
+    
+    h3 {
+      background: #ff4d4d;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px 10px 0 0;
+      margin: 0px;
+      padding-top: 6px;
+      height: 3em;
+
+      &:nth-child(3) {
+        border-radius: 0px;
+        background-color:  lighten(red, 45%);
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        margin: 0px 0px;
+      }
+
+      &:nth-child(5) {
+        border-radius: 0 0 10px 10px;
+      }
+    }
+
+    p {
+      margin: 0px;
+    }
+    i.low{
+      color: red;
+    }
+    i.low-average{
+      color: rgb(255, 77, 0);
+    }
+    i.average{
+      color: rgb(255, 183, 0);
+    }
+    i.high-average{
+      color: rgb(149, 255, 0);
+    }
+    i.high{
+      color: rgb(64, 176, 9);
+    }
+  }
+  
 }

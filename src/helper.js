@@ -52,8 +52,9 @@ export default class DistrictRepository {
   findAllMatches(query) {
     let regex = new RegExp(query, 'gi');
 
-    let matches = this.data.filter(dataPoint => regex.test(Object.keys(dataPoint)[0]));
-    return matches;
+    return this.data.filter(dataPoint => 
+      regex.test(Object.keys(dataPoint)[0])
+    );
   }
 
   findAverage(query) {
@@ -72,8 +73,8 @@ export default class DistrictRepository {
     let dist1Avg = this.findAverage(dist1);
     let dist2Avg = this.findAverage(dist2);
     let difference = dist1Avg > dist2Avg ? 
-      dist2Avg/dist1Avg : 
-      dist1Avg/dist2Avg;
+      dist1Avg/dist2Avg - 1 : 
+      dist2Avg/dist1Avg - 1;
         
     return {
       [dist1.toUpperCase()]: dist1Avg, 

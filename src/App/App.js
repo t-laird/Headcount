@@ -6,7 +6,6 @@ import ComparisonContainer from '../ComparisonContainer/ComparisonContainer';
 import CardContainer from '../CardContainer/CardContainer';
 import DistrictRepository from '../helper';
 
-
 class App extends Component {
   constructor() {
     super();
@@ -14,7 +13,7 @@ class App extends Component {
     this.cleanData = new DistrictRepository(kinderData);
 
     this.state = {
-      cards: this.cleanData.data, 
+      cards: [],
       comparison: [null, null]
     };
 
@@ -23,8 +22,14 @@ class App extends Component {
     this.compareCards = this.compareCards.bind(this);
   }
 
+  componentDidMount() {  
+    this.setState({
+      cards: this.cleanData.data
+    });
+  }
+
   updateQuery(value) {
-    this.setState( {cards: this.cleanData.findAllMatches(value)} );
+    this.setState( {cards: this.cleanData.findAllMatches(value)});
   }
 
   selectCard(location) {
