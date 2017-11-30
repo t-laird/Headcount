@@ -16,7 +16,8 @@ class App extends Component {
     this.state = {
       cards: this.cleanData.data, 
       comparison: [null, null]
-    }
+    };
+
     this.updateQuery = this.updateQuery.bind(this);
     this.selectCard = this.selectCard.bind(this);
     this.compareCards = this.compareCards.bind(this);
@@ -30,13 +31,14 @@ class App extends Component {
     const locationIndex = this.state.comparison.indexOf(location);
     
     if (this.state.comparison[0] === null && locationIndex === -1) {
-      this.setState( {comparison: [location, this.state.comparison[1]]} )
+      this.setState( {comparison: [location, this.state.comparison[1]]} );
     } else if (this.state.comparison[1] === null && locationIndex === -1) {      
-      this.setState( {comparison: [this.state.comparison[0], location]} )      
+      this.setState( {comparison: [this.state.comparison[0], location]} );      
     } else if (locationIndex !== -1) {
       let comparison = 
         [...this.state.comparison.slice(0, locationIndex), null, 
-         ...this.state.comparison.slice(locationIndex + 1)];
+          ...this.state.comparison.slice(locationIndex + 1)];
+
       this.setState( {comparison} );
     }
     this.updateQuery('');

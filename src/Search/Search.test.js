@@ -5,11 +5,14 @@ import { shallow, mount } from 'enzyme';
 
 describe('Search test', () => {
   let mockFunc;
+
   let renderedSearch;
+
   beforeEach(() => {
     mockFunc = jest.fn();
     renderedSearch = shallow(<Search updateQuery={mockFunc}/>);
   });
+
   it('should render the correct components', () => {
     expect(renderedSearch.find('.Search').length).toEqual(1);
   });
@@ -27,8 +30,10 @@ describe('Search test', () => {
   it('Should change the class on the container when the search icon is clicked', () => {
     renderedSearch = mount(<Search updateQuery={mockFunc}/>);
     const searchButton = renderedSearch.find('.icon-search');
+
     searchButton.simulate('click');
     const expectedClass = 'Search expanded';
+
     expect(renderedSearch.state('expanded')).toEqual(expectedClass);
     expect(renderedSearch.find('.expanded').length).toEqual(1);
     expect(renderedSearch.find('.Search').length).toEqual(1);
@@ -46,8 +51,10 @@ describe('Search test', () => {
     renderedSearch = mount(<Search updateQuery={mockFunc} />);
 
     const searchButton = renderedSearch.find('.icon-search');
+
     searchButton.simulate('click');
     const initialExpectedClass = 'Search expanded';
+    
     const finalExpectedClass = 'Search';
 
     expect(renderedSearch.state('expanded')).toEqual(initialExpectedClass);

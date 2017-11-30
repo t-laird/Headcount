@@ -5,9 +5,11 @@ import { shallow, mount } from 'enzyme';
 
 describe('CardContainer test', () => {
   let renderedCardContainer;
+
   beforeEach( () => {
     renderedCardContainer = shallow(<CardContainer cards={[]}/>);
   });
+
   it('should render the correct components', () => {
     expect(renderedCardContainer.find('.CardContainer').length).toEqual(1);
   });
@@ -22,7 +24,11 @@ describe('CardContainer test', () => {
       { Location2: {2000: 0.5, 2001: 1} },
       { Location3: {2000: 0.5, 2001: 1} }
     ];
-    renderedCardContainer = shallow(<CardContainer comparison={[null, null]} cards={mockCards} />);
+
+    renderedCardContainer = shallow(
+      <CardContainer 
+        comparison={[null, null]} 
+        cards={mockCards} />);
 
     expect(renderedCardContainer.find('Card').length).toEqual(3);
   });
