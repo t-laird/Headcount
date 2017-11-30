@@ -58,7 +58,7 @@ const ComparisonContainer = (props) => {
           data={{}}
         />
       }
-      
+
       {
         comparisonCard &&
         <Card 
@@ -84,7 +84,9 @@ const ComparisonContainer = (props) => {
       }
       {
         !mappedCards[1] &&
-        <Card type="Card comparison" data={{}}/>
+        <Card 
+          type="Card comparison" 
+          data={{}}/>
       }
     </div>
   );
