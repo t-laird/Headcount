@@ -9,7 +9,7 @@
   padding: 0px;
   width: 200px;
   min-width: 200px;
-  // min-height: 300px;
+  transition: 1s;
   box-sizing: border-box;
   display: flex;
   div {
@@ -27,8 +27,8 @@
     border-radius: 10px 10px 0 0;
   }
   ul {
-    margin: 15px 0 0;
-    padding: 15px;
+    margin: 10px 0 0;
+    padding: 10px;
     li {
       list-style: none;
       display: flex;
@@ -69,7 +69,7 @@
   }
   cursor: pointer;
   &:hover {
-    box-shadow: 5px 5px 5px 5px black;  
+    box-shadow: 1px 1px 1px 1px black;  
   }
 }
 
@@ -81,7 +81,7 @@
 .Card.comparison {
   border: 1px dashed black;
   background-color: lightgrey;
-  height: 294.25px;
+  height: 279.25px;
 
 }
 
@@ -118,7 +118,7 @@
         background-color:  lighten(red, 45%);
         border-top: 1px solid black;
         border-bottom: 1px solid black;
-        margin: 30px 0px;
+        margin: 0px 0px;
       }
 
       &:nth-child(5) {

@@ -7,6 +7,7 @@
   padding: 0px;
   width: 200px;
   min-width: 200px;
+  transition: 1s;
   box-sizing: border-box;
   display: flex;
   cursor: pointer; }
@@ -23,8 +24,8 @@
     background: #ff4d4d;
     border-radius: 10px 10px 0 0; }
   .Card ul {
-    margin: 15px 0 0;
-    padding: 15px; }
+    margin: 10px 0 0;
+    padding: 10px; }
     .Card ul li {
       list-style: none;
       display: flex;
@@ -49,7 +50,7 @@
     .Card ul .not-yet {
       color: #919B9E; }
   .Card:hover {
-    box-shadow: 5px 5px 5px 5px black; }
+    box-shadow: 1px 1px 1px 1px black; }
 
 .selected {
   background-color: #ffe6e6; }
@@ -57,7 +58,7 @@
 .Card.comparison {
   border: 1px dashed black;
   background-color: lightgrey;
-  height: 294.25px; }
+  height: 279.25px; }
 
 .Card.compared {
   border: 1px dashed black;
@@ -87,7 +88,7 @@
         background-color: #ffe6e6;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
-        margin: 30px 0px; }
+        margin: 0px 0px; }
       .Card.displayComparedData div h3:nth-child(5) {
         border-radius: 0 0 10px 10px; }
     .Card.displayComparedData div p {

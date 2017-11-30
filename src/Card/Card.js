@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = (props) => {
+  const arrayOfQualities = ['low', 'low-average', 'average', 'high-average', 'high'];
   const mappedData = Object.keys(props.data).map((dataPoint, index) => {
-    const liStyle = props.data[dataPoint] > 0.5 ? 'high' : 'not-yet';
+    const liStyle = Math.floor(props.data[dataPoint] * 4.999);   
 
     return (
       <li 
         key={`li-${index}`} 
-        className={liStyle}>
-        <p>{dataPoint}:</p> {props.data[dataPoint]}
+      >
+        <i className={`icon-apple ${arrayOfQualities[liStyle]}`}></i>
+        <p className="date">{dataPoint}:</p> <p className="data">{props.data[dataPoint]}</p>
       </li>
     );
   });
@@ -37,9 +39,11 @@ const Card = (props) => {
       {
         (props.type === 'Card displayComparedData') &&
         <div>
-          <h3> {props.district1}: {props.compareData[props.district1]}</h3>
-          <h3> {props.compareData.compared}</h3>
-          <h3> {props.district2}: {props.compareData[props.district2]}</h3>
+          <h3> {props.district1} </h3>
+          <p>District Average: <i className={`icon-apple ${arrayOfQualities[Math.floor(props.compareData[props.district1] * 4.999)]}`}></i>{props.compareData[props.district1]}</p>
+          <h3> Percentage Difference: {`${(props.compareData.compared*100).toFixed(1)}%`}</h3>
+          <p>District Average: <i className={`icon-apple ${arrayOfQualities[Math.floor(props.compareData[props.district2] * 4.999)]}`}></i>{props.compareData[props.district2]}</p>
+          <h3> {props.district2} </h3>
         </div>
       }
     </div>
