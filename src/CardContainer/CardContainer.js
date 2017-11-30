@@ -8,9 +8,10 @@ const CardContainer = (props) => {
     const location = Object.keys(card)[0];
     let type = 
       (props.comparison[0] === location || 
-       props.comparison[1] === location) ? 
-        'Card selected' :
-        'Card';
+       props.comparison[1] === location) 
+        ? 'Card selected' 
+        : 'Card';
+
     return (
       <Card 
         key={`card-${index}`}
@@ -19,20 +20,20 @@ const CardContainer = (props) => {
         district={location}
         type={type}
       />
-    )
-  })
+    );
+  });
 
   return (
     <div className="CardContainer">
       {mappedCards}
     </div>
   );
-}
+};
 
 CardContainer.propTypes = {
   cards: PropTypes.array,
   selectCard: PropTypes.func,
   comparison: PropTypes.array,
-}
+};
 
 export default CardContainer;
