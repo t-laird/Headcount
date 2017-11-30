@@ -48,7 +48,7 @@ Card.propTypes = {
   district: PropTypes.string,
   district1: PropTypes.string,
   district2: PropTypes.string,
-  compareData: PropTypes.bool
+  compareData: PropTypes.object
 }
 
 export default Card;
