@@ -29,7 +29,7 @@ ShallowWrapper {
         null,
         <Card
           data={Object {}}
-          type="Card Comparison" />,
+          type="Card comparison" />,
         null,
         <Card
           data={Object {}}
@@ -37,7 +37,7 @@ ShallowWrapper {
         null,
         <Card
           data={Object {}}
-          type="Card Comparison" />,
+          type="Card comparison" />,
       ],
       "className": "ComparisonContainer",
     },
@@ -61,7 +61,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "data": Object {},
-          "type": "Card Comparison",
+          "type": "Card comparison",
         },
         "ref": null,
         "rendered": null,
@@ -87,7 +87,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "data": Object {},
-          "type": "Card Comparison",
+          "type": "Card comparison",
         },
         "ref": null,
         "rendered": null,
@@ -109,7 +109,7 @@ ShallowWrapper {
           null,
           <Card
             data={Object {}}
-            type="Card Comparison" />,
+            type="Card comparison" />,
           null,
           <Card
             data={Object {}}
@@ -117,7 +117,7 @@ ShallowWrapper {
           null,
           <Card
             data={Object {}}
-            type="Card Comparison" />,
+            type="Card comparison" />,
         ],
         "className": "ComparisonContainer",
       },
@@ -141,7 +141,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "data": Object {},
-            "type": "Card Comparison",
+            "type": "Card comparison",
           },
           "ref": null,
           "rendered": null,
@@ -167,7 +167,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "data": Object {},
-            "type": "Card Comparison",
+            "type": "Card comparison",
           },
           "ref": null,
           "rendered": null,

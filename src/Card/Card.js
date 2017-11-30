@@ -15,7 +15,7 @@ const Card = (props) => {
     <div className={props.type}>
       {
         props.district &&
-        <div onClick={() => {props.selectCard(props.district);}}>
+        <div className='card-content' onClick={() => {props.selectCard(props.district);}}>
           <h4>{props.district}</h4>
           <ul>
             {mappedData}
