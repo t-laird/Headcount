@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = (props) => {
@@ -39,5 +40,7 @@ const Card = (props) => {
     </div>
   );
 };
+
+
 
 export default Card;
