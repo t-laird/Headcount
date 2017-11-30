@@ -38,8 +38,6 @@ const ComparisonContainer = (props) => {
     (mappedCards[0] && mappedCards[1]) 
       ? props.compareCards(mappedCards[0].props.district,                               mappedCards[1].props.district) 
       : null;
-
-  console.log(comparisonCard);
   
   return (
     <div className="ComparisonContainer">
