@@ -49,11 +49,14 @@ const Card = (props) => {
 Card.propTypes = {
   type: PropTypes.string,
   data: PropTypes.object,
-  selectCard: PropTypes.func,
   district: PropTypes.string,
   district1: PropTypes.string,
   district2: PropTypes.string,
-  compareData: PropTypes.bool
+  selectCard: PropTypes.func,
+  compareData: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object
+  ]),
 };
 
 export default Card;

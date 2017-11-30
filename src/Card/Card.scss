@@ -11,17 +11,21 @@
   display: flex;
   div {
     width: 100%;
-    padding: 15px;
   }
   h4 {
-    height: 2em;
+    height: 3em;
+    padding: 3px;
     margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    width: 100%;
+    background: #ff4d4d;
+    border-radius: 10px 10px 0 0;
   }
   ul {
     margin: 15px 0 0;
-    padding: 3px;
+    padding: 15px;
     li {
       list-style: none;
       p {
@@ -31,10 +35,10 @@
       }
     }
     .high {
-      color: blue;
+      color: #36494E;;
     }
     .not-yet {
-      color: lightblue;
+      color: #919B9E;
     }
   }
   cursor: pointer;
@@ -57,4 +61,11 @@
 .Card.compared {
   border: 1px dashed black;
   text-align: center;
+}
+
+.Card.displayComparedData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
