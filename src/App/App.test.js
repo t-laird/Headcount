@@ -80,9 +80,9 @@ describe('App test', () => {
     clickedCard1.simulate('click');
     clickedCard2.simulate('click');
     expect(renderedApp.find('.displayComparedData').length).toEqual(1);
-    expect(renderedApp.find('.displayComparedData').find('h3').at(0).text()).toEqual(' ACADEMY 20: 0.407');
-    expect(renderedApp.find('.displayComparedData').find('h3').at(1).text()).toEqual(' 0.574');
-    expect(renderedApp.find('.displayComparedData').find('h3').at(2).text()).toEqual(' ADAMS COUNTY 14: 0.709');  
+    expect(renderedApp.find('.displayComparedData').find('h3').at(0).text()).toEqual(' ACADEMY 20 ');
+    expect(renderedApp.find('.displayComparedData').find('h3').at(1).text()).toEqual(' Percentage Difference: 74.2%');
+    expect(renderedApp.find('.displayComparedData').find('h3').at(2).text()).toEqual(' ADAMS COUNTY 14 ');  
   });
 
   it('Should update the cards displayed in the card container when a search query is entered', () => {
