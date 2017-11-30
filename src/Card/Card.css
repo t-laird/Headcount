@@ -10,16 +10,20 @@
   display: flex;
   cursor: pointer; }
   .Card div {
-    width: 100%;
-    padding: 15px; }
-  .Card h4 {
-    height: 2em;
-    margin: 0px;
-    text-align: center;
     width: 100%; }
+  .Card h4 {
+    height: 3em;
+    padding: 3px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #ff4d4d;
+    border-radius: 10px 10px 0 0; }
   .Card ul {
     margin: 15px 0 0;
-    padding: 3px; }
+    padding: 15px; }
     .Card ul li {
       list-style: none; }
       .Card ul li p {
@@ -27,9 +31,9 @@
         width: 40px;
         margin: 0; }
     .Card ul .high {
-      color: blue; }
+      color: #36494E; }
     .Card ul .not-yet {
-      color: lightblue; }
+      color: #919B9E; }
   .Card:hover {
     box-shadow: 5px 5px 5px 5px black; }
 
@@ -44,3 +48,9 @@
 .Card.compared {
   border: 1px dashed black;
   text-align: center; }
+
+.Card.displayComparedData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
