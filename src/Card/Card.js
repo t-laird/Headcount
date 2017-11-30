@@ -56,7 +56,7 @@ Card.propTypes = {
   compareData: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.object
-  ]),
+  ])
 };
 
 export default Card;
