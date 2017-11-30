@@ -3,7 +3,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Card
-    data={Array []}
+    data={Object {}}
     type="Card" />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

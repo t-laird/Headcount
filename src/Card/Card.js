@@ -41,6 +41,14 @@ const Card = (props) => {
   );
 };
 
-
+Card.propTypes = {
+  type: PropTypes.string,
+  data: PropTypes.object,
+  selectCard: PropTypes.func,
+  district: PropTypes.string,
+  district1: PropTypes.string,
+  district2: PropTypes.string,
+  compareData: PropTypes.bool
+}
 
 export default Card;
