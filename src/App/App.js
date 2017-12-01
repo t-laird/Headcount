@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import gradRateData from '../../data/high_school_graduation_rates.js';
 import Header from '../Header/Header';
 import Search from '../Search/Search';
 import ComparisonContainer from '../ComparisonContainer/ComparisonContainer';
@@ -10,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.cleanData = new DistrictRepository(kinderData);
+    this.cleanData = new DistrictRepository(gradRateData);
 
     this.state = {
       cards: [],
@@ -20,12 +21,17 @@ class App extends Component {
     this.updateQuery = this.updateQuery.bind(this);
     this.selectCard = this.selectCard.bind(this);
     this.compareCards = this.compareCards.bind(this);
+    this.populateData = this.populateData.bind(this);
   }
 
   componentDidMount() {  
     this.setState({
       cards: this.cleanData.data
     });
+  }
+
+  populateData(dataFile) {
+    this.cleanData = new DistrictRepository(dataFile);
   }
 
   updateQuery(value) {

@@ -3,6 +3,14 @@ export default class DistrictRepository {
     this.data = [];
     this.filterData(data);
   }
+
+  prepData(data) {
+    if(Array.isArray(data)) {
+      return data
+    } else {
+      return data[0]
+    }
+  }
   
   filterData(data) {
     let dataObj = data.reduce( (result, dataPoint) => {
