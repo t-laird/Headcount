@@ -3,7 +3,7 @@ export default class DistrictRepository {
     this.data = [];
     this.filterData(data);
   }
-  
+
   filterData(data) {
     let dataObj = data.reduce( (result, dataPoint) => {
       

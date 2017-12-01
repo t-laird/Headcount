@@ -20,12 +20,18 @@ class App extends Component {
     this.updateQuery = this.updateQuery.bind(this);
     this.selectCard = this.selectCard.bind(this);
     this.compareCards = this.compareCards.bind(this);
+    this.populateData = this.populateData.bind(this);
   }
 
   componentDidMount() {  
     this.setState({
       cards: this.cleanData.data
     });
+  }
+
+  populateData(dataFile) {
+    this.cleanData = new DistrictRepository(dataFile);
+    this.updateQuery('');
   }
 
   updateQuery(value) {
@@ -56,7 +62,7 @@ class App extends Component {
   render() {    
     return (
       <div>
-        <Header />
+        <Header populateData={this.populateData}/>
         <Search updateQuery={this.updateQuery} />
         <ComparisonContainer
           selectCard={this.selectCard} 

@@ -5,10 +5,12 @@
   box-shadow: 5px 5px 5px 5px darkgrey;
   margin-bottom: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   h1 {
-    margin: 10px 0px;
+    margin: 0px;
     font-size: 90px;
     // font-family: 'Squada One', sans-serif;
     // letter-spacing: .06em;
@@ -22,6 +24,17 @@
       background-color: black;
       color: lighten(red, 15%);
       // letter-spacing: 0;
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    margin: 5px;
+    button {
+      border-radius: 50px;
+      cursor: pointer;
+      border: none;
+      margin: 3px;
     }
   }
 }
