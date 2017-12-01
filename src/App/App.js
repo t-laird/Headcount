@@ -30,7 +30,6 @@ class App extends Component {
   }
 
   populateData(dataFile) {
-    console.log('click')
     this.cleanData = new DistrictRepository(dataFile);
     this.updateQuery('');
   }
