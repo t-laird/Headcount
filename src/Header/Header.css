@@ -3,9 +3,11 @@
   box-shadow: 5px 5px 5px 5px darkgrey;
   margin-bottom: 15px;
   display: flex;
-  justify-content: center; }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
   .Header h1 {
-    margin: 10px 0px;
+    margin: 0px;
     font-size: 90px; }
     .Header h1 span {
       border: 1px solid black;
@@ -15,6 +17,14 @@
       margin: 0px -30px 0px -25px;
       background-color: black;
       color: #ff4d4d; }
+  .Header .button-wrapper {
+    display: flex;
+    margin: 5px; }
+    .Header .button-wrapper button {
+      border-radius: 50px;
+      cursor: pointer;
+      border: none;
+      margin: 3px; }
 
 @media screen and (max-width: 650px) {
   .Header h1 {
