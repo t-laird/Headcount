@@ -81,8 +81,10 @@
       border-radius: 10px 10px 0 0;
       margin: 0px;
       padding-top: 6px;
-      height: 3em; }
+      height: 3em;
+      font-size: 14pt; }
       .Card.displayComparedData div h3 i {
+        font-size: 30px;
         color: red; }
       .Card.displayComparedData div h3:nth-child(3) {
         border-radius: 0px;

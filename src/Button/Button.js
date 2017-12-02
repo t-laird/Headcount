@@ -13,7 +13,7 @@ const Button = (props) => {
           props.chartStatus(false);
         }
       }}>
-      {props.name}
+      <i className={props.icon}></i> {props.name}
     </button>
   )
 }

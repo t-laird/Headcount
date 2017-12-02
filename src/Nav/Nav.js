@@ -18,6 +18,7 @@ const Nav = (props) => {
   return (
     <div className='Nav'>
       <Button
+        icon='icon-child'
         changeData={props.changeData}
         type='kinderData'
         name={props.dataDescriptions.kinderData} 
@@ -25,6 +26,7 @@ const Nav = (props) => {
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
+        icon='icon-graduation-cap'
         changeData={props.changeData}
         type='gradData'
         name={props.dataDescriptions.gradData} 
@@ -32,6 +34,7 @@ const Nav = (props) => {
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
+        icon='icon-pencil'
         changeData={props.changeData}
         type='enrollment'
         name={props.dataDescriptions.enrollment} 
@@ -39,6 +42,7 @@ const Nav = (props) => {
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
+        icon='icon-laptop'
         changeData={props.changeData}
         type='onlineEnrollment'
         name={props.dataDescriptions.onlineEnrollment} 
@@ -46,6 +50,7 @@ const Nav = (props) => {
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
+        icon='icon-dollar'
         changeData={props.changeData}
         type='householdIncome' 
         name={props.dataDescriptions.householdIncome} 
@@ -53,6 +58,7 @@ const Nav = (props) => {
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
+        icon='icon-traffic-cone'
         changeData={props.changeData}
         type='studentsInPoverty'
         name={props.dataDescriptions.studentsInPoverty}  
@@ -60,6 +66,7 @@ const Nav = (props) => {
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
+        icon='icon-doc-text'
         changeData={props.changeData}
         type='titleIstudents' 
         name={props.dataDescriptions.titleIstudents} 
@@ -67,6 +74,7 @@ const Nav = (props) => {
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
+        icon='icon-handshake-o'
         changeData={props.changeData}
         type='specialEducation'
         name={props.dataDescriptions.specialEducation}  
@@ -74,6 +82,7 @@ const Nav = (props) => {
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
+        icon='icon-ccw'
         changeData={props.changeData}
         type='remediationInHigherEducation'
         name={props.dataDescriptions.remediationInHigherEducation}  
