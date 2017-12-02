@@ -67,6 +67,7 @@ const ComparisonContainer = (props) => {
           compareData={comparisonCard}
           district1={mappedCards[0].props.district.toUpperCase()}
           district2={mappedCards[1].props.district.toUpperCase()}
+          chartStatus={props.chartStatus}
         />
       }
       {
