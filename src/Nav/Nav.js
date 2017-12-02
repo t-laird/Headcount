@@ -76,6 +76,12 @@ const Nav = (props) => {
   );
 };
 
-
+Button.propTypes = {
+  data: PropTypes.obj,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  populateData: PropTypes.func,
+  displayDataLabel: PropTypes.func
+};
 
 export default Nav;
