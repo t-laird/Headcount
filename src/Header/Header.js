@@ -21,39 +21,48 @@ const Header = (props) => {
         <Button
           type='gradData' 
           data={gradData}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
         <Button
           type='kinderData' 
           data={kinderData}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
         <Button
           type='onlineEnrollment' 
           data={onlineEnrollment}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
         <Button
           type='householdIncome' 
           data={householdIncome}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
         <Button
           type='enrollment' 
           data={enrollment}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
         <Button
           type='remediationInHigherEducation' 
           data={remediationInHigherEducation}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
         <Button
           type='studentsInPoverty' 
           data={studentsInPoverty}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
         <Button
           type='specialEducation' 
           data={specialEducation}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
         <Button
           type='titleIstudents' 
           data={titleIstudents}
-          populateData={props.populateData}/>
+          populateData={props.populateData}
+          displayDataLabel={props.displayDataLabel}/>
       </div>
     </div>
   );

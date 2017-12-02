@@ -12,17 +12,18 @@ class App extends Component {
 
     this.cleanData = new DistrictRepository(kinderData);
     
-
     this.state = {
       cards: [],
       comparison: [null, null],
-      dataDescription: {}
+      dataDescription: {},
+      currentDataFile: undefined
     };
 
     this.updateQuery = this.updateQuery.bind(this);
     this.selectCard = this.selectCard.bind(this);
     this.compareCards = this.compareCards.bind(this);
     this.populateData = this.populateData.bind(this);
+    this.displayDataLabel = this.displayDataLabel.bind(this);
   }
 
   componentDidMount() {
@@ -38,10 +39,17 @@ class App extends Component {
       titleIstudents: 'Students qualifying for Title I'
     }
 
+
     this.setState({
       cards: this.cleanData.data,
+      currentDataFile: dataDescription.kinderData,
       dataDescription
     });
+  }
+
+  displayDataLabel(dataType) {
+    const currentDataFile = this.state.dataDescription[dataType];
+    this.setState( {currentDataFile} )
   }
 
   populateData(dataFile) {
@@ -74,11 +82,12 @@ class App extends Component {
     return this.cleanData.compareDistrictAverages(district1, district2);  
   }
 
-  render() {    
+  render() {
     return (
       <div>
-        <Header populateData={this.populateData}/>
+        <Header populateData={this.populateData} displayDataLabel={this.displayDataLabel}/>
         <ComparisonContainer
+          currentDataFile={this.state.currentDataFile}
           selectCard={this.selectCard} 
           compareCards={this.compareCards}
           comparison={this.state.comparison}
