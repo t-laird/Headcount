@@ -1,5 +1,6 @@
 
 .icon-search:before { content: '\e800'; } /* '' */
+.icon-chart-line:before { content: '\e801'; } /* '' */
 .icon-spin5:before { content: '\e838'; } /* '' */
 .icon-blank:before { content: '\f0c8'; } /* '' */
 .icon-smile:before { content: '\f118'; } /* '' */

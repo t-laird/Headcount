@@ -1,5 +1,5 @@
 {
-  "name": "searchicon",
+  "name": "",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -41,6 +41,12 @@
       "css": "apple",
       "code": 61817,
       "src": "fontawesome"
+    },
+    {
+      "uid": "7184d8171b6a9b18eabbace94cca21db",
+      "css": "chart-line",
+      "code": 59393,
+      "src": "entypo"
     }
   ]
 }
