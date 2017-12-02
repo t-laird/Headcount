@@ -17,48 +17,57 @@ const Nav = (props) => {
   return (
     <div className='Nav'>
       <Button
-        type='gradData' 
-        data={gradData}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        type='kinderData' 
+        type='kinderData'
+        name='Full-day kindergarteners' 
         data={kinderData}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
-        type='onlineEnrollment' 
-        data={onlineEnrollment}
+        type='gradData'
+        name='High-school graduation rates' 
+        data={gradData}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
-        type='householdIncome' 
-        data={householdIncome}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        type='enrollment' 
+        type='enrollment'
+        name='Total enrollment' 
         data={enrollment}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
-        type='remediationInHigherEducation' 
-        data={remediationInHigherEducation}
+        type='onlineEnrollment'
+        name='Online enrollment' 
+        data={onlineEnrollment}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
-        type='studentsInPoverty' 
+        type='householdIncome'
+        name='Median household income' 
+        data={householdIncome}
+        populateData={props.populateData}
+        displayDataLabel={props.displayDataLabel}/>
+      <Button
+        type='studentsInPoverty'
+        name='Student in poverty' 
         data={studentsInPoverty}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
-        type='specialEducation' 
+        type='titleIstudents'
+        name='Title I student' 
+        data={titleIstudents}
+        populateData={props.populateData}
+        displayDataLabel={props.displayDataLabel}/>
+      <Button
+        type='specialEducation'
+        name='Students in special-education' 
         data={specialEducation}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
-        type='titleIstudents' 
-        data={titleIstudents}
+        type='remediationInHigherEducation'
+        name='Remediation in higher education' 
+        data={remediationInHigherEducation}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
     </div>

@@ -5,7 +5,7 @@ const Button = (props) => {
     <button 
       className={props.type}
       onClick={() => {props.populateData(props.data); props.displayDataLabel(props.type)}}>
-      {props.type}
+      {props.name}
     </button>
   )
 }

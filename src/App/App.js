@@ -87,11 +87,11 @@ class App extends Component {
     return (
       <div>
         <div className='main-wrapper'>
-          <Nav />
+          <Nav 
+            populateData={this.populateData} 
+            displayDataLabel={this.displayDataLabel} />
           <div className='containers-wrapper'>
-        <Header 
-          populateData={this.populateData} 
-          displayDataLabel={this.displayDataLabel}/>
+        <Header />
             <ComparisonContainer
               currentDataFile={this.state.currentDataFile}
               selectCard={this.selectCard} 
