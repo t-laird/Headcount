@@ -28,7 +28,7 @@ class App extends Component {
 
   componentDidMount() {
     const dataDescription = {
-      gradData: 'High School graduation rates',
+      gradData: 'High-school graduation rates',
       kinderData: 'Kindergartners in full day programs',
       enrollment: 'Student enrollment',
       onlineEnrollment: 'Online student enrollment',
