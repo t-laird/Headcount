@@ -8,7 +8,8 @@
   .ComparisonContainer h3 {
     color: #ff4d4d;
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    font-size: 18pt; }
 
 @media screen and (max-width: 945px) {
   .ComparisonContainer {

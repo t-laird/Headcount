@@ -1,6 +1,5 @@
 .Header {
   background: #ff4d4d;
-  box-shadow: 5px 5px 5px 0px darkgrey;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -5,7 +5,7 @@ import './Card.css';
 const Card = (props) => {
   const arrayOfQualities = ['low', 'low-average', 'average', 'high-average', 'high'];
   const mappedData = Object.keys(props.data).map((dataPoint, index) => {
-    const liStyle = Math.floor(props.data[dataPoint] * 4.999);   
+    const liStyle = props.data[dataPoint] > 1 ? 4 : Math.floor(props.data[dataPoint] * 4.999);   
 
     return (
       <li key={`li-${index}`}>
@@ -31,7 +31,7 @@ const Card = (props) => {
       {
         (props.type === 'Card compared') &&
           <div>
-            <h1>Click Two Cards to Compare Them</h1>
+            <h1>Click Two Cards to Compare Districts</h1>
           </div>
       }
       {

@@ -1,21 +1,28 @@
 .Nav {
   display: flex;
   flex-direction: column;
-  padding: 30px 15px ;
-  background: lighten(red, 15%); 
+  padding: 150px 0px ;
+  // background: lighten(red, 15%);
+  background: #506479;
 
   button {
     border: none;
-    box-shadow: 3px 3px 3px 3px darken(red, 15%);
-    margin: 15px auto;
+    border-radius: 0px;
+    // box-shadow: 3px 3px 3px 3px darken(#617993, 25%);
+    margin: 5px 0;
     cursor: pointer;
-    width: 120px;
-    height: 4em;
-    // background: lighten(red, 25%);
-    // color: #fff; 
+    font-size: 12pt;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    padding: 3px;
+    outline: none;
+    padding-left: 5px;
+    // height: 2.5em;
     &:hover {
       background: lighten(red, 45%);
-      box-shadow: 1px 1px 1px 1px darken(red, 45%); 
+      box-shadow: 1px 1px 1px 1px inset darken(#617993, 45%); 
       color: black;
     }
   }
