@@ -11,10 +11,12 @@ class App extends Component {
     super();
 
     this.cleanData = new DistrictRepository(kinderData);
+    
 
     this.state = {
       cards: [],
-      comparison: [null, null]
+      comparison: [null, null],
+      dataDescription: {}
     };
 
     this.updateQuery = this.updateQuery.bind(this);
@@ -23,9 +25,22 @@ class App extends Component {
     this.populateData = this.populateData.bind(this);
   }
 
-  componentDidMount() {  
+  componentDidMount() {
+    const dataDescription = {
+      gradData: '',
+      kinderData: '',
+      enrollment: '',
+      onlineEnrollment: '',
+      householdIncome: '',
+      remediationInHigherEducation: '',
+      studentsInPoverty: '',
+      specialEducation: '',
+      titleIstudents: ''
+    }
+
     this.setState({
-      cards: this.cleanData.data
+      cards: this.cleanData.data,
+      dataDescription
     });
   }
 
@@ -63,13 +78,13 @@ class App extends Component {
     return (
       <div>
         <Header populateData={this.populateData}/>
-        <Search updateQuery={this.updateQuery} />
         <ComparisonContainer
           selectCard={this.selectCard} 
           compareCards={this.compareCards}
           comparison={this.state.comparison}
           cards={this.cleanData.findAllMatches('')} 
         />
+        <Search updateQuery={this.updateQuery} />
         <CardContainer 
           cards={this.state.cards}
           comparison={this.state.comparison}

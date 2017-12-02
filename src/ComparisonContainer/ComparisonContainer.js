@@ -46,7 +46,7 @@ const ComparisonContainer = (props) => {
   
   return (
     <div className="ComparisonContainer">
-      <h3>Click Two Cards to Compare the School Districts</h3>
+      <h3>Currently showing: Kindergartners in full day programs</h3>
       {
         mappedCards[0] &&
         mappedCards[0]
