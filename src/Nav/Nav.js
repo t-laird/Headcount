@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button/Button.js';
 import './Nav.css';
 
@@ -14,64 +15,67 @@ import titleIstudents from '../../data/title_i_students.js';
 
 
 const Nav = (props) => {
+  console.log(props)
   return (
     <div className='Nav'>
       <Button
-        type='kinderData'
-        name='Full-day kindergarteners' 
+        type={'kinderData'}
+        name={props.dataDescriptions.kinderData} 
         data={kinderData}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
         type='gradData'
-        name='High-school graduation rates' 
+        name={props.dataDescriptions.gradData} 
         data={gradData}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
         type='enrollment'
-        name='Total enrollment' 
+        name={props.dataDescriptions.enrollment} 
         data={enrollment}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
         type='onlineEnrollment'
-        name='Online enrollment' 
+        name={props.dataDescriptions.onlineEnrollment} 
         data={onlineEnrollment}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
-        type='householdIncome'
-        name='Median household income' 
+        type='householdIncome' 
+        name={props.dataDescriptions.householdIncome} 
         data={householdIncome}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
         type='studentsInPoverty'
-        name='Student in poverty' 
+        name={props.dataDescriptions.studentsInPoverty}  
         data={studentsInPoverty}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
-        type='titleIstudents'
-        name='Title I student' 
+        type='titleIstudents' 
+        name={props.dataDescriptions.titleIstudents} 
         data={titleIstudents}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
         type='specialEducation'
-        name='Students in special-education' 
+        name={props.dataDescriptions.specialEducation}  
         data={specialEducation}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
       <Button
         type='remediationInHigherEducation'
-        name='Remediation in higher education' 
+        name={props.dataDescriptions.remediationInHigherEducation}  
         data={remediationInHigherEducation}
         populateData={props.populateData}
         displayDataLabel={props.displayDataLabel}/>
     </div>
   );
 };
+
+
 
 export default Nav;

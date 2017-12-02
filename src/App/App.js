@@ -17,7 +17,7 @@ class App extends Component {
     this.state = {
       cards: [],
       comparison: [null, null],
-      dataDescription: {},
+      dataDescriptions: {},
       currentDataFile: undefined
     };
 
@@ -29,27 +29,27 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const dataDescription = {
+    const dataDescriptions = {
       gradData: 'High-school graduation rates',
-      kinderData: 'Kindergartners in full day programs',
+      kinderData: 'Kindergartners in full day programs', 
       enrollment: 'Student enrollment',
       onlineEnrollment: 'Online student enrollment',
       householdIncome: 'Median household income',
       remediationInHigherEducation: 'Remediation in higher education',
       studentsInPoverty: 'School aged children in poverty',
-      specialEducation: 'Students in special-education programs',
+      specialEducation: 'Students in special education programs',
       titleIstudents: 'Students qualifying for Title I'
     }
 
     this.setState({
       cards: this.cleanData.data,
-      currentDataFile: dataDescription.kinderData,
-      dataDescription
+      currentDataFile: dataDescriptions.kinderData,
+      dataDescriptions
     });
   }
 
   displayDataLabel(dataType) {
-    const currentDataFile = this.state.dataDescription[dataType];
+    const currentDataFile = this.state.dataDescriptions[dataType]
     this.setState( {currentDataFile} )
   }
 
@@ -84,10 +84,12 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <div className='main-wrapper'>
-          <Nav 
+          <Nav
+            dataDescriptions={this.state.dataDescriptions}
             populateData={this.populateData} 
             displayDataLabel={this.displayDataLabel} />
           <div className='containers-wrapper'>
