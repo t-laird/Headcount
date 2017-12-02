@@ -46,49 +46,56 @@ const ComparisonContainer = (props) => {
   
   return (
     <div className="ComparisonContainer">
-      <h3>Currently showing: {props.currentDataFile}</h3>
-      {
-        mappedCards[0] &&
-        mappedCards[0]
-      }
-      {
-        !mappedCards[0] &&
-        <Card 
-          type="Card comparison" 
-          data={{}}
-        />
-      }
+      <div className="cards">
+        <h3>Currently showing: {props.currentDataFile}</h3>
+        <div className="instructions">
+          <h5>Click card to remove</h5>
+          <h5>Click graph icon</h5>
+          <h5>Click card to remove</h5>
+        </div>
+        {
+          mappedCards[0] &&
+          mappedCards[0]
+        }
+        {
+          !mappedCards[0] &&
+          <Card 
+            type="Card comparison" 
+            data={{}}
+          />
+        }
 
-      {
-        comparisonCard &&
-        <Card 
-          data={{}}
-          type="Card displayComparedData"
-          compareData={comparisonCard}
-          district1={mappedCards[0].props.district.toUpperCase()}
-          district2={mappedCards[1].props.district.toUpperCase()}
-          chartStatus={props.chartStatus}
-        />
-      }
-      {
-        !comparisonCard &&
-        <Card
-          type="Card compared"
-          data={{}}
-        />
-      }
+        {
+          comparisonCard &&
+          <Card 
+            data={{}}
+            type="Card displayComparedData"
+            compareData={comparisonCard}
+            district1={mappedCards[0].props.district.toUpperCase()}
+            district2={mappedCards[1].props.district.toUpperCase()}
+            chartStatus={props.chartStatus}
+          />
+        }
+        {
+          !comparisonCard &&
+          <Card
+            type="Card compared"
+            data={{}}
+          />
+        }
 
-      
-      {
-        mappedCards[1] &&
-        mappedCards[1]
-      }
-      {
-        !mappedCards[1] &&
-        <Card 
-          type="Card comparison" 
-          data={{}}/>
-      }
+        
+        {
+          mappedCards[1] &&
+          mappedCards[1]
+        }
+        {
+          !mappedCards[1] &&
+          <Card 
+            type="Card comparison" 
+            data={{}}/>
+        }
+      </div>
     </div>
   );
 };
