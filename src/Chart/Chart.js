@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 import './Chart.css';
 import Button from '../Button/Button';
 
@@ -9,16 +9,17 @@ const Chart = (props) => {
   });
 
   const location1 = Object.assign({}, 
-                      {district: Object.keys(comparedLocations[0])[0]}, 
-                      {scores: Object.values(comparedLocations[0][Object.keys(comparedLocations[0])[0]])}, 
-                      {dates: Object.keys(comparedLocations[0][Object.keys(comparedLocations[0])[0]])}
-                    );
+    {district: Object.keys(comparedLocations[0])[0]}, 
+    {scores: Object.values(comparedLocations[0][Object.keys(comparedLocations[0])[0]])}, 
+    {dates: Object.keys(comparedLocations[0][Object.keys(comparedLocations[0])[0]])}
+  );
 
-  const location2 = Object.assign({}, 
-                      {district: Object.keys(comparedLocations[1])[0]}, 
-                      {scores: Object.values(comparedLocations[1][Object.keys(comparedLocations[1])[0]])}, 
-                      {dates: Object.keys(comparedLocations[1][Object.keys(comparedLocations[1])[0]])}
-                    );
+  const location2 = 
+    Object.assign({}, 
+      {district: Object.keys(comparedLocations[1])[0]}, 
+      {scores: Object.values(comparedLocations[1][Object.keys(comparedLocations[1])[0]])}, 
+      {dates: Object.keys(comparedLocations[1][Object.keys(comparedLocations[1])[0]])}
+    );
 
 
   const mappedDates = location1.dates.map( (date, index) => {
@@ -36,7 +37,7 @@ const Chart = (props) => {
       <div className="chartNav">
         <h5>{location1.district}<div className="district1key"></div></h5>
         <h5>{location2.district}<div className="district2key"></div></h5>
-        <Button type="Close"/>
+        <Button type="chart-close" name="Close" chartStatus={props.chartStatus}/>
       </div>
       <ul>
         {mappedDates}

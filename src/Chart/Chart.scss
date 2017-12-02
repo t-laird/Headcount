@@ -39,6 +39,9 @@
       display: inline-block;
       margin-left: 10px;          
     }
+    button {
+      z-index: 10;
+    }
   }
   ul {
     width: 100%;

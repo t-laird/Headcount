@@ -28,9 +28,8 @@ class App extends Component {
     this.updateQuery = this.updateQuery.bind(this);
     this.selectCard = this.selectCard.bind(this);
     this.compareCards = this.compareCards.bind(this);
-    this.populateData = this.populateData.bind(this);
     this.chartStatus = this.chartStatus.bind(this);
-    this.displayDataLabel = this.displayDataLabel.bind(this);
+    this.changeData = this.changeData.bind(this);
   }
 
   componentDidMount() {
@@ -54,13 +53,19 @@ class App extends Component {
   }
 
   displayDataLabel(dataType) {
-    const currentDataFile = this.state.dataDescriptions[dataType]
+    const currentDataFile = this.state.dataDescriptions[dataType];
+
     this.setState( {currentDataFile} )
   }
 
   populateData(dataFile) {
     this.cleanData = new DistrictRepository(dataFile);
     this.updateQuery('');
+  }
+
+  changeData(dataType, dataFile) {
+    this.displayDataLabel(dataType);
+    this.populateData(dataFile);
   }
 
   updateQuery(value) {
@@ -100,8 +105,8 @@ class App extends Component {
         <div className='main-wrapper'>
           <Nav
             dataDescriptions={this.state.dataDescriptions}
-            populateData={this.populateData} 
-            displayDataLabel={this.displayDataLabel} />
+            changeData={this.changeData}
+          />
           <div className='containers-wrapper'>
         <Header />
             <ComparisonContainer
@@ -110,6 +115,7 @@ class App extends Component {
               compareCards={this.compareCards}
               comparison={this.state.comparison}
               cards={this.cleanData.findAllMatches('')} 
+              chartStatus={this.chartStatus}
             />
             <Search updateQuery={this.updateQuery} />
             <CardContainer 
@@ -119,7 +125,7 @@ class App extends Component {
             />
         {
           this.state.renderChart &&
-          <Chart chartData={this.state.chartData} comparisons={this.state.comparison} cards={this.cleanData.findAllMatches('')} />
+          <Chart chartData={this.state.chartData} comparisons={this.state.comparison} chartStatus={this.chartStatus} cards={this.cleanData.findAllMatches('')} />
         }
           </div>
         </div>
