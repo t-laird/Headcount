@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import './App.css';
 import Header from '../Header/Header';
-import Search from '../Search/Search';
+import Nav from '../Nav/Nav';
 import ComparisonContainer from '../ComparisonContainer/ComparisonContainer';
+import Search from '../Search/Search';
 import CardContainer from '../CardContainer/CardContainer';
 import DistrictRepository from '../helper';
+import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
 class App extends Component {
   constructor() {
@@ -38,7 +40,6 @@ class App extends Component {
       specialEducation: 'Students in special-education programs',
       titleIstudents: 'Students qualifying for Title I'
     }
-
 
     this.setState({
       cards: this.cleanData.data,
@@ -85,20 +86,27 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header populateData={this.populateData} displayDataLabel={this.displayDataLabel}/>
-        <ComparisonContainer
-          currentDataFile={this.state.currentDataFile}
-          selectCard={this.selectCard} 
-          compareCards={this.compareCards}
-          comparison={this.state.comparison}
-          cards={this.cleanData.findAllMatches('')} 
-        />
-        <Search updateQuery={this.updateQuery} />
-        <CardContainer 
-          cards={this.state.cards}
-          comparison={this.state.comparison}
-          selectCard={this.selectCard} 
-        />
+        <div className='main-wrapper'>
+          <Nav />
+          <div className='containers-wrapper'>
+        <Header 
+          populateData={this.populateData} 
+          displayDataLabel={this.displayDataLabel}/>
+            <ComparisonContainer
+              currentDataFile={this.state.currentDataFile}
+              selectCard={this.selectCard} 
+              compareCards={this.compareCards}
+              comparison={this.state.comparison}
+              cards={this.cleanData.findAllMatches('')} 
+            />
+            <Search updateQuery={this.updateQuery} />
+            <CardContainer 
+              cards={this.state.cards}
+              comparison={this.state.comparison}
+              selectCard={this.selectCard} 
+            />
+          </div>
+        </div>
       </div>
     );
   }

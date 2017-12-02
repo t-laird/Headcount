@@ -1,9 +1,9 @@
 // @import url('https://fonts.googleapis.com/css?family=Squada+One');
 
 .Header {
-  background-color: lighten(red, 15%);
-  box-shadow: 5px 5px 5px 5px darkgrey;
-  margin-bottom: 15px;
+  background: lighten(red, 15%);
+  box-shadow: 5px 5px 5px 0px darkgrey;
+  // margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,17 +24,6 @@
       background-color: black;
       color: lighten(red, 15%);
       // letter-spacing: 0;
-    }
-  }
-
-  .button-wrapper {
-    display: flex;
-    margin: 5px;
-    button {
-      border-radius: 50px;
-      cursor: pointer;
-      border: none;
-      margin: 3px;
     }
   }
 }

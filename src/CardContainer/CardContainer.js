@@ -24,8 +24,10 @@ const CardContainer = (props) => {
   });
 
   return (
-    <div className="CardContainer">
-      {mappedCards}
+    <div className='card-container-wrapper'>
+      <div className="CardContainer">
+        {mappedCards}
+      </div>
     </div>
   );
 };

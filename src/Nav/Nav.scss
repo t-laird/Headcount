@@ -1,0 +1,17 @@
+.Nav {
+  display: flex;
+  flex-direction: column;
+  background: lighten(red, 15%);
+  // box-shadow: 5px 5px 5px 5px darkgrey;
+  padding: 50px 15px ;
+  button {
+    // border-radius: 50px;
+    margin: 15px auto;
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    // word-break: overflow-wrap;
+    // border: none;
+    // margin: 3px;
+  }
+}
