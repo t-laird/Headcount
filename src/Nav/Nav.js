@@ -76,8 +76,8 @@ const Nav = (props) => {
   );
 };
 
-Button.propTypes = {
-  data: PropTypes.obj,
+Nav.propTypes = {
+  data: PropTypes.array,
   type: PropTypes.string,
   name: PropTypes.string,
   populateData: PropTypes.func,
