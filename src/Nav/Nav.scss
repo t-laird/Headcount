@@ -1,18 +1,26 @@
 .Nav {
   display: flex;
   flex-direction: column;
-  background: lighten(red, 15%);
-  
-  // box-shadow: 5px 5px 5px 5px darkgrey;
   padding: 30px 15px ;
+  background: lighten(red, 15%); 
+
   button {
-    // border-radius: 50px;
+    border: none;
+    box-shadow: 3px 3px 3px 3px darken(red, 15%);
     margin: 15px auto;
     cursor: pointer;
     width: 120px;
     height: 4em;
-    // word-break: overflow-wrap;
-    // border: none;
-    // margin: 3px;
+    // background: lighten(red, 25%);
+    // color: #fff; 
+    &:hover {
+      background: lighten(red, 45%);
+      box-shadow: 1px 1px 1px 1px darken(red, 45%); 
+      color: black;
+    }
+  }
+  button.active {
+    background: lighten(red, 15%); 
+    box-shadow: 1px 1px 1px 1px darken(red, 45%); 
   }
 }

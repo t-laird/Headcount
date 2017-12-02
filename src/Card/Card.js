@@ -8,9 +8,7 @@ const Card = (props) => {
     const liStyle = Math.floor(props.data[dataPoint] * 4.999);   
 
     return (
-      <li 
-        key={`li-${index}`} 
-      >
+      <li key={`li-${index}`}>
         <i className={`icon-apple ${arrayOfQualities[liStyle]}`}></i>
         <p className="date">{dataPoint}:</p> <p className="data">{props.data[dataPoint]}</p>
       </li>

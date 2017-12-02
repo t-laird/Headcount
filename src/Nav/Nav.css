@@ -1,10 +1,19 @@
 .Nav {
   display: flex;
   flex-direction: column;
-  background: #ff4d4d;
-  padding: 30px 15px; }
+  padding: 30px 15px;
+  background: #ff4d4d; }
   .Nav button {
+    border: none;
+    box-shadow: 3px 3px 3px 3px #b30000;
     margin: 15px auto;
     cursor: pointer;
     width: 120px;
     height: 4em; }
+    .Nav button:hover {
+      background: #ffe6e6;
+      box-shadow: 1px 1px 1px 1px #1a0000;
+      color: black; }
+  .Nav button.active {
+    background: #ff4d4d;
+    box-shadow: 1px 1px 1px 1px #1a0000; }

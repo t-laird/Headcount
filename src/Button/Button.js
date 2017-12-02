@@ -6,7 +6,12 @@ const Button = (props) => {
   return (
     <button 
       className={props.type}
-      onClick={() => {props.populateData(props.data); props.displayDataLabel(props.type)}}>
+      onClick={() => {
+        props.populateData(props.data); 
+        props.displayDataLabel(props.type);
+        console.log(this)
+        // e.target.class = `${props.type} active`
+        }}>
       {props.name}
     </button>
   )

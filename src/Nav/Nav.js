@@ -18,7 +18,7 @@ const Nav = (props) => {
   return (
     <div className='Nav'>
       <Button
-        type={'kinderData'}
+        type='kinderData'
         name={props.dataDescriptions.kinderData} 
         data={kinderData}
         populateData={props.populateData}
