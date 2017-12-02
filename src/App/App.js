@@ -13,12 +13,14 @@ class App extends Component {
     super();
 
     this.cleanData = new DistrictRepository(kinderData);
-
+    
     this.state = {
       cards: [],
       comparison: [null, null],
       renderChart: false,
-      chartData: {}
+      chartData: {},
+      dataDescription: {},
+      currentDataFile: undefined
     };
 
     this.updateQuery = this.updateQuery.bind(this);
@@ -26,12 +28,33 @@ class App extends Component {
     this.compareCards = this.compareCards.bind(this);
     this.populateData = this.populateData.bind(this);
     this.chartStatus = this.chartStatus.bind(this);
+    this.displayDataLabel = this.displayDataLabel.bind(this);
   }
 
-  componentDidMount() {  
+  componentDidMount() {
+    const dataDescription = {
+      gradData: 'High-school graduation rates',
+      kinderData: 'Kindergartners in full day programs',
+      enrollment: 'Student enrollment',
+      onlineEnrollment: 'Online student enrollment',
+      householdIncome: 'Median household income',
+      remediationInHigherEducation: 'Remediation in higher education',
+      studentsInPoverty: 'School aged children in poverty',
+      specialEducation: 'Students in special-education programs',
+      titleIstudents: 'Students qualifying for Title I'
+    }
+
+
     this.setState({
-      cards: this.cleanData.data
+      cards: this.cleanData.data,
+      currentDataFile: dataDescription.kinderData,
+      dataDescription
     });
+  }
+
+  displayDataLabel(dataType) {
+    const currentDataFile = this.state.dataDescription[dataType];
+    this.setState( {currentDataFile} )
   }
 
   populateData(dataFile) {
@@ -70,18 +93,19 @@ class App extends Component {
     });
   }
 
-  render() {    
+  render() {
     return (
       <div>
-        <Header populateData={this.populateData}/>
-        <Search updateQuery={this.updateQuery} />
+        <Header populateData={this.populateData} displayDataLabel={this.displayDataLabel}/>
         <ComparisonContainer
+          currentDataFile={this.state.currentDataFile}
           selectCard={this.selectCard} 
           compareCards={this.compareCards}
           comparison={this.state.comparison}
           cards={this.cleanData.findAllMatches('')}
           chartStatus={this.chartStatus} 
         />
+        <Search updateQuery={this.updateQuery} />
         <CardContainer 
           cards={this.state.cards}
           comparison={this.state.comparison}

@@ -4,8 +4,8 @@ const Button = (props) => {
   return (
     <button 
       className={props.type}
-      onClick={() => {props.populateData(props.data)}}>
-      show {props.type}
+      onClick={() => {props.populateData(props.data); props.displayDataLabel(props.type)}}>
+      {props.type}
     </button>
   )
 }
