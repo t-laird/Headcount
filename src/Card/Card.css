@@ -1,4 +1,4 @@
-@import url(../../fontello-e98b1dbc/css/searchicon.css);
+@import url(../../fontello-e98b1dbc/css/fontello.css);
 .Card {
   border: none;
   border-radius: 10px;
@@ -83,6 +83,8 @@
       margin: 0px;
       padding-top: 6px;
       height: 3em; }
+      .Card.displayComparedData div h3 i {
+        color: red; }
       .Card.displayComparedData div h3:nth-child(3) {
         border-radius: 0px;
         background-color: #ffe6e6;
