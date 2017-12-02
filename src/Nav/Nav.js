@@ -15,7 +15,6 @@ import titleIstudents from '../../data/title_i_students.js';
 
 
 const Nav = (props) => {
-  console.log(props)
   return (
     <div className='Nav'>
       <Button
