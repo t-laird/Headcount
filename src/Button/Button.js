@@ -7,9 +7,12 @@ const Button = (props) => {
     <button 
       className={props.type}
       onClick={() => {
-        props.populateData(props.data); 
-        props.displayDataLabel(props.type);
-        }}>
+        if (!props.chartStatus) {
+          props.changeData(props.type, props.data);
+        } else {
+          props.chartStatus(false);
+        }
+      }}>
       {props.name}
     </button>
   )

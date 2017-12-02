@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
-import Chart from '../Chart/Chart';
 
 const Card = (props) => {
   const arrayOfQualities = ['low', 'low-average', 'average', 'high-average', 'high'];
