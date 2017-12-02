@@ -27,15 +27,15 @@ class App extends Component {
 
   componentDidMount() {
     const dataDescription = {
-      gradData: '',
-      kinderData: '',
-      enrollment: '',
-      onlineEnrollment: '',
-      householdIncome: '',
-      remediationInHigherEducation: '',
-      studentsInPoverty: '',
-      specialEducation: '',
-      titleIstudents: ''
+      gradData: 'High School graduation rates',
+      kinderData: 'Kindergartners in full day programs',
+      enrollment: 'Student enrollment',
+      onlineEnrollment: 'Online student enrollment',
+      householdIncome: 'Median household income',
+      remediationInHigherEducation: 'Remediation in higher education',
+      studentsInPoverty: 'School aged children in poverty',
+      specialEducation: 'Students in special-education programs',
+      titleIstudents: 'Students qualifying for Title I'
     }
 
     this.setState({
