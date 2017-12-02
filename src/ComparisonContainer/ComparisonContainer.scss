@@ -2,25 +2,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
+  margin: 15px auto 0;
   width: 780px;
   border: 1px dashed black;
-  
   h3 {
     color: lighten(red, 15%);
     width: 100%;
     text-align: center;
+    font-size: 18pt;
   }
 }
 
-@media screen and (max-width: 830px){
+@media screen and (max-width: 945px){
+  .ComparisonContainer {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 860px){
   .ComparisonContainer {
     width: 520px;
   }
 }
 
-@media screen and (max-width: 570px){
+@media screen and (max-width: 670px){
   .ComparisonContainer {
-    width: 260px;
+    width: 460px;
   }
 }

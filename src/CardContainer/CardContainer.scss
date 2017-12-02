@@ -3,22 +3,22 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 0px auto;
-  width: 1150px;
+  width: 1166px;
 }
 
-@media screen and (max-width: 1350px){
+@media screen and (max-width: 1300px){
   .CardContainer {
     width: 920px;
   }
 }
 
-@media screen and (max-width: 1090px){
+@media screen and (max-width: 1075px){
   .CardContainer {
     width: 690px;
   }
 }
 
-@media screen and (max-width: 830px){
+@media screen and (max-width: 845px){
   .CardContainer {
     width: 460px;
   }
@@ -26,6 +26,6 @@
 
 @media screen and (max-width: 570px){
   .CardContainer {
-    width: 230px;
+    width: 220px;
   }
 }

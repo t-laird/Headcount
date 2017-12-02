@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import './App.css';
 import Header from '../Header/Header';
-import Search from '../Search/Search';
+import Nav from '../Nav/Nav';
 import ComparisonContainer from '../ComparisonContainer/ComparisonContainer';
+import Search from '../Search/Search';
 import CardContainer from '../CardContainer/CardContainer';
 import DistrictRepository from '../helper';
+import kinderData from '../../data/kindergartners_in_full_day_program.js';
 import Chart from '../Chart/Chart';
-
 
 class App extends Component {
   constructor() {
@@ -17,6 +18,7 @@ class App extends Component {
     this.state = {
       cards: [],
       comparison: [null, null],
+      dataDescriptions: {},
       renderChart: false,
       chartData: {},
       dataDescription: {},
@@ -32,28 +34,27 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const dataDescription = {
+    const dataDescriptions = {
       gradData: 'High-school graduation rates',
-      kinderData: 'Kindergartners in full day programs',
+      kinderData: 'Kindergartners in full day programs', 
       enrollment: 'Student enrollment',
       onlineEnrollment: 'Online student enrollment',
       householdIncome: 'Median household income',
       remediationInHigherEducation: 'Remediation in higher education',
       studentsInPoverty: 'School aged children in poverty',
-      specialEducation: 'Students in special-education programs',
+      specialEducation: 'Students in special education programs',
       titleIstudents: 'Students qualifying for Title I'
     }
 
-
     this.setState({
       cards: this.cleanData.data,
-      currentDataFile: dataDescription.kinderData,
-      dataDescription
+      currentDataFile: dataDescriptions.kinderData,
+      dataDescriptions
     });
   }
 
   displayDataLabel(dataType) {
-    const currentDataFile = this.state.dataDescription[dataType];
+    const currentDataFile = this.state.dataDescriptions[dataType]
     this.setState( {currentDataFile} )
   }
 
@@ -96,25 +97,32 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header populateData={this.populateData} displayDataLabel={this.displayDataLabel}/>
-        <ComparisonContainer
-          currentDataFile={this.state.currentDataFile}
-          selectCard={this.selectCard} 
-          compareCards={this.compareCards}
-          comparison={this.state.comparison}
-          cards={this.cleanData.findAllMatches('')}
-          chartStatus={this.chartStatus} 
-        />
-        <Search updateQuery={this.updateQuery} />
-        <CardContainer 
-          cards={this.state.cards}
-          comparison={this.state.comparison}
-          selectCard={this.selectCard} 
-        />
+        <div className='main-wrapper'>
+          <Nav
+            dataDescriptions={this.state.dataDescriptions}
+            populateData={this.populateData} 
+            displayDataLabel={this.displayDataLabel} />
+          <div className='containers-wrapper'>
+        <Header />
+            <ComparisonContainer
+              currentDataFile={this.state.currentDataFile}
+              selectCard={this.selectCard} 
+              compareCards={this.compareCards}
+              comparison={this.state.comparison}
+              cards={this.cleanData.findAllMatches('')} 
+            />
+            <Search updateQuery={this.updateQuery} />
+            <CardContainer 
+              cards={this.state.cards}
+              comparison={this.state.comparison}
+              selectCard={this.selectCard} 
+            />
         {
           this.state.renderChart &&
           <Chart chartData={this.state.chartData} comparisons={this.state.comparison} cards={this.cleanData.findAllMatches('')} />
         }
+          </div>
+        </div>
       </div>
     );
   }
