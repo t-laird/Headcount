@@ -5,6 +5,8 @@ import Search from '../Search/Search';
 import ComparisonContainer from '../ComparisonContainer/ComparisonContainer';
 import CardContainer from '../CardContainer/CardContainer';
 import DistrictRepository from '../helper';
+import Chart from '../Chart/Chart';
+
 
 class App extends Component {
   constructor() {
@@ -14,13 +16,16 @@ class App extends Component {
 
     this.state = {
       cards: [],
-      comparison: [null, null]
+      comparison: [null, null],
+      renderChart: false,
+      chartData: {}
     };
 
     this.updateQuery = this.updateQuery.bind(this);
     this.selectCard = this.selectCard.bind(this);
     this.compareCards = this.compareCards.bind(this);
     this.populateData = this.populateData.bind(this);
+    this.chartStatus = this.chartStatus.bind(this);
   }
 
   componentDidMount() {  
@@ -59,6 +64,12 @@ class App extends Component {
     return this.cleanData.compareDistrictAverages(district1, district2);  
   }
 
+  chartStatus(status) {
+    this.setState({
+      renderChart: status
+    });
+  }
+
   render() {    
     return (
       <div>
@@ -68,13 +79,18 @@ class App extends Component {
           selectCard={this.selectCard} 
           compareCards={this.compareCards}
           comparison={this.state.comparison}
-          cards={this.cleanData.findAllMatches('')} 
+          cards={this.cleanData.findAllMatches('')}
+          chartStatus={this.chartStatus} 
         />
         <CardContainer 
           cards={this.state.cards}
           comparison={this.state.comparison}
           selectCard={this.selectCard} 
         />
+        {
+          this.state.renderChart &&
+          <Chart chartData={this.state.chartData} comparisons={this.state.comparison} cards={this.cleanData.findAllMatches('')} />
+        }
       </div>
     );
   }
