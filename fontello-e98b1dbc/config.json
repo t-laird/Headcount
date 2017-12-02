@@ -1,5 +1,5 @@
 {
-  "name": "searchicon",
+  "name": "",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -41,6 +41,90 @@
       "css": "apple",
       "code": 61817,
       "src": "fontawesome"
+    },
+    {
+      "uid": "7184d8171b6a9b18eabbace94cca21db",
+      "css": "chart-line",
+      "code": 59393,
+      "src": "entypo"
+    },
+    {
+      "uid": "c2314ed1d2314b89f9285c53bcbf2548",
+      "css": "child",
+      "code": 61870,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ef74ff62feda486fd414410e782b598a",
+      "css": "graduation-cap",
+      "code": 59394,
+      "src": "entypo"
+    },
+    {
+      "uid": "c77fd2fd065b5fe16d6f2b41e190b266",
+      "css": "pencil",
+      "code": 59395,
+      "src": "entypo"
+    },
+    {
+      "uid": "e3e12be877eab92e593ca185223e7a5b",
+      "css": "pencil-neg",
+      "code": 59396,
+      "src": "iconic"
+    },
+    {
+      "uid": "abe051e31ad705400cf6226b24b6e828",
+      "css": "desktop",
+      "code": 59400,
+      "src": "elusive"
+    },
+    {
+      "uid": "fhpup8jff2yw9kmuwavhyqxogczcbbhj",
+      "css": "dollar",
+      "code": 59402,
+      "src": "modernpics"
+    },
+    {
+      "uid": "500fc1f109021e4b1de4deda2f7ed399",
+      "css": "laptop",
+      "code": 61705,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "6a06892e76b81e023da6ddfb38a26b37",
+      "css": "doc-text",
+      "code": 59403,
+      "src": "typicons"
+    },
+    {
+      "uid": "9fecfcfe680a469caedeeb40641a479f",
+      "css": "handshake-o",
+      "code": 62133,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "79d27b578931fd441a6dc885c9dd88a6",
+      "css": "address-card",
+      "code": 62139,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "465bb89b6f204234e5787c326b4ae54c",
+      "css": "ccw",
+      "code": 59405,
+      "src": "entypo"
+    },
+    {
+      "uid": "2bbde1076919db3d1dcc7f6b43d19bd4",
+      "css": "traffic-cone",
+      "code": 59406,
+      "src": "entypo"
+    },
+    {
+      "uid": "f47srtt9pew19q6kg9jniwtzsb8q1rhy",
+      "css": "attention",
+      "code": 59407,
+      "src": "modernpics"
     }
   ]
 }

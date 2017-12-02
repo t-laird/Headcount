@@ -7,6 +7,7 @@ import Search from '../Search/Search';
 import CardContainer from '../CardContainer/CardContainer';
 import DistrictRepository from '../helper';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import Chart from '../Chart/Chart';
 
 class App extends Component {
   constructor() {
@@ -18,6 +19,9 @@ class App extends Component {
       cards: [],
       comparison: [null, null],
       dataDescriptions: {},
+      renderChart: false,
+      chartData: {},
+      dataDescription: {},
       currentDataFile: undefined
     };
 
@@ -25,6 +29,7 @@ class App extends Component {
     this.selectCard = this.selectCard.bind(this);
     this.compareCards = this.compareCards.bind(this);
     this.populateData = this.populateData.bind(this);
+    this.chartStatus = this.chartStatus.bind(this);
     this.displayDataLabel = this.displayDataLabel.bind(this);
   }
 
@@ -83,6 +88,12 @@ class App extends Component {
     return this.cleanData.compareDistrictAverages(district1, district2);  
   }
 
+  chartStatus(status) {
+    this.setState({
+      renderChart: status
+    });
+  }
+
   render() {
     return (
       <div>
@@ -106,6 +117,10 @@ class App extends Component {
               comparison={this.state.comparison}
               selectCard={this.selectCard} 
             />
+        {
+          this.state.renderChart &&
+          <Chart chartData={this.state.chartData} comparisons={this.state.comparison} cards={this.cleanData.findAllMatches('')} />
+        }
           </div>
         </div>
       </div>

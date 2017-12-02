@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
+import Chart from '../Chart/Chart';
 
 const Card = (props) => {
   const arrayOfQualities = ['low', 'low-average', 'average', 'high-average', 'high'];
@@ -39,7 +40,7 @@ const Card = (props) => {
         <div>
           <h3> {props.district1} </h3>
           <p>District Average: <i className={`icon-apple ${arrayOfQualities[Math.floor(props.compareData[props.district1] * 4.999)]}`}></i>{props.compareData[props.district1]}</p>
-          <h3> Percentage Difference: {`${(props.compareData.compared*100).toFixed(1)}%`}</h3>
+          <h3> Percentage Difference: {`${(props.compareData.compared*100).toFixed(1)}%`} <span className="displayChart" onClick={()=> {props.chartStatus(true)}}><i className="icon-chart-line"></i></span></h3>
           <p>District Average: <i className={`icon-apple ${arrayOfQualities[Math.floor(props.compareData[props.district2] * 4.999)]}`}></i>{props.compareData[props.district2]}</p>
           <h3> {props.district2} </h3>
         </div>

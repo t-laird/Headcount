@@ -1,4 +1,4 @@
-@import '../../fontello-e98b1dbc/css/searchicon.css';
+@import '../../fontello-e98b1dbc/css/fontello.css';
 
 
 .Card {
@@ -97,7 +97,6 @@
     flex-direction: column;
     display: flex;
     justify-content: space-between;
-    
     border-radius: 10px;
     
     h3 {
@@ -110,6 +109,10 @@
       margin: 0px;
       padding-top: 6px;
       height: 3em;
+
+      i {
+        color: red;
+      }
 
       &:nth-child(3) {
         border-radius: 0px;
@@ -143,5 +146,4 @@
       color: rgb(64, 176, 9);
     }
   }
-  
 }
