@@ -2,6 +2,7 @@ import React from 'react';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import './Chart.css';
 import Button from '../Button/Button';
+import PropTypes from 'prop-types';
 
 const Chart = (props) => {
   const comparedLocations = props.cards.filter( card => {
@@ -88,6 +89,12 @@ const Chart = (props) => {
       </ul>
     </div>
   );
+};
+
+Chart.propTypes = {
+  cards: PropTypes.array,
+  chartStatus: PropTypes.func,
+  comparisons: PropTypes.array
 };
 
 export default Chart;
