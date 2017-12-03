@@ -29,6 +29,12 @@ module.exports = {
             "error",
             "unix"
         ],
+        "key-spacing": [
+            "error", {
+            "beforeColon": false,
+            "afterColon": true
+            }
+        ],
         "quotes": [
             "error",
             "single"
@@ -40,6 +46,9 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "globals": {
+            "mount": true
+        }
     }
 };
