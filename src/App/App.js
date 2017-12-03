@@ -110,12 +110,6 @@ class App extends Component {
               cards={this.cleanData.findAllMatches('')} 
               chartStatus={this.chartStatus}
             />
-            <Search updateQuery={this.updateQuery} />
-            <CardContainer 
-              cards={this.state.cards}
-              comparison={this.state.comparison}
-              selectCard={this.selectCard} 
-            />
             {
               this.state.renderChart &&
               <Chart 
@@ -124,6 +118,12 @@ class App extends Component {
                 chartStatus={this.chartStatus} 
                 cards={this.cleanData.findAllMatches('')} />
             }
+            <Search updateQuery={this.updateQuery} />
+            <CardContainer 
+              cards={this.state.cards}
+              comparison={this.state.comparison}
+              selectCard={this.selectCard} 
+            />
           </div>
         </div>
       </div>
