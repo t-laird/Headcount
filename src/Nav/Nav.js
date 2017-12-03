@@ -18,25 +18,25 @@ import titleIstudents from '../../data/title_i_students.js';
 const Nav = (props) => {
   const dataFiles = 
     [kinderData, 
-    gradData, 
-    enrollment, 
-    onlineEnrollment, 
-    householdIncome, 
-    studentsInPoverty,
-    titleIstudents,
-    specialEducation,
-    remediationInHigherEducation];
+      gradData, 
+      enrollment, 
+      onlineEnrollment, 
+      householdIncome, 
+      studentsInPoverty,
+      titleIstudents,
+      specialEducation,
+      remediationInHigherEducation];
 
   const icons = 
     ['icon-child', 
-    'icon-graduation-cap', 
-    'icon-pencil', 
-    'icon-laptop', 
-    'icon-dollar', 
-    'icon-traffic-cone', 
-    'icon-doc-text', 
-    'icon-handshake-o', 
-    'icon-ccw'];
+      'icon-graduation-cap', 
+      'icon-pencil', 
+      'icon-laptop', 
+      'icon-dollar', 
+      'icon-traffic-cone', 
+      'icon-doc-text', 
+      'icon-handshake-o', 
+      'icon-ccw'];
 
   const dataTypes = Object.keys(props.dataDescriptions);
 
@@ -49,7 +49,7 @@ const Nav = (props) => {
         changeData={props.changeData}
         name={props.dataDescriptions[type]} 
         data={dataFiles[index]} />
-    )
+    );
   });
 
   return (
