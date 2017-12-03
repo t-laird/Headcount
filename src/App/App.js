@@ -59,7 +59,6 @@ class App extends Component {
   changeData = (dataType, dataFile) => {
     this.displayDataLabel(dataType);
     this.populateData(dataFile);
-    console.log(dataFile);
 
     if(this.state.comparison[0] === 'Colorado') {
       if (dataFile.indexOf( data => data.location === 'Colorado') === -1) {
@@ -112,7 +111,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.comparison);
     return (
       <div>
         <div className='main-wrapper'>
