@@ -1,40 +1,41 @@
 @import url(../../fontello-e98b1dbc/css/fontello.css);
 .Card {
+  display: flex;
   border: none;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 5px darkgrey;
+  box-sizing: border-box;
   margin: 15px;
   padding: 0px;
-  width: 200px;
   min-width: 200px;
-  transition: 1s;
-  box-sizing: border-box;
-  display: flex;
-  cursor: pointer; }
+  width: 200px;
+  cursor: pointer;
+  transition: 1s; }
+  .Card:hover {
+    box-shadow: 1px 1px 1px 1px black; }
   .Card div {
     width: 100%; }
   .Card h4 {
-    height: 3em;
-    padding: 3px;
-    margin: 0px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     background: #ff4d4d;
-    border-radius: 10px 10px 0 0; }
+    border-radius: 10px 10px 0 0;
+    height: 3em;
+    margin: 0px;
+    padding: 3px; }
   .Card ul {
     margin: 10px 0 0;
     padding: 10px; }
     .Card ul li {
-      list-style: none;
       display: flex;
-      justify-content: space-around; }
+      justify-content: space-around;
+      list-style: none; }
       .Card ul li p {
         margin: 0; }
       .Card ul li p.data {
-        width: 40px;
-        text-align: right; }
+        text-align: right;
+        width: 40px; }
       .Card ul li i.low {
         color: red; }
       .Card ul li i.low-average {
@@ -45,19 +46,13 @@
         color: #95ff00; }
       .Card ul li i.high {
         color: #40b009; }
-    .Card ul .high {
-      color: #36494E; }
-    .Card ul .not-yet {
-      color: #919B9E; }
-  .Card:hover {
-    box-shadow: 1px 1px 1px 1px black; }
 
 .selected {
   background-color: #ffe6e6; }
 
 .Card.comparison {
-  border: 1px dashed black;
-  background-color: lightgrey; }
+  background-color: lightgrey;
+  border: 1px dashed black; }
 
 .Card.compared {
   border: 1px dashed black;
@@ -66,32 +61,32 @@
 .Card.displayComparedData {
   display: flex; }
   .Card.displayComparedData div {
-    height: 100%;
-    align-items: center;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    border-radius: 10px; }
+    border-radius: 10px;
+    height: 100%; }
     .Card.displayComparedData div h3 {
-      background: #ff4d4d;
-      color: black;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      background: #ff4d4d;
       border-radius: 10px 10px 0 0;
+      color: black;
+      font-size: 14pt;
       margin: 0px;
       padding-top: 6px;
-      height: 3em;
-      font-size: 14pt; }
+      height: 3em; }
       .Card.displayComparedData div h3 i {
-        font-size: 30px;
-        color: red; }
+        color: red;
+        font-size: 30px; }
       .Card.displayComparedData div h3:nth-child(3) {
+        background: #ffe6e6;
         border-radius: 0px;
-        background-color: #ffe6e6;
-        border-top: 1px solid black;
         border-bottom: 1px solid black;
-        margin: 0px 0px; }
+        border-top: 1px solid black;
+        margin: 0px; }
       .Card.displayComparedData div h3:nth-child(5) {
         border-radius: 0 0 10px 10px; }
     .Card.displayComparedData div p {
