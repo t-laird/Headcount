@@ -112,7 +112,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.comparison);
     return (
       <div>
         <div className='main-wrapper'>
@@ -134,7 +133,6 @@ class App extends Component {
             {
               this.state.renderChart &&
               <Chart 
-                chartData={this.state.chartData} 
                 comparisons={this.state.comparison} 
                 chartStatus={this.chartStatus} 
                 cards={this.cleanData.findAllMatches('')} />
