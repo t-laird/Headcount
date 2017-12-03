@@ -11,7 +11,7 @@ const Button = (props) => {
           ? props.changeData(props.type, props.data) 
           : props.chartStatus(false);
       }}>
-      <i className={props.icon}></i> {props.name}
+      <i className={props.icon}></i>{props.name}
     </button>
   );
 };
