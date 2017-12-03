@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
+import DistrictRepository from '../helper';
+import kinderData from '../../data/kindergartners_in_full_day_program.js';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import ComparisonContainer from '../ComparisonContainer/ComparisonContainer';
+import Chart from '../Chart/Chart';
 import Search from '../Search/Search';
 import CardContainer from '../CardContainer/CardContainer';
-import DistrictRepository from '../helper';
-import kinderData from '../../data/kindergartners_in_full_day_program.js';
-import Chart from '../Chart/Chart';
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -17,10 +17,10 @@ class App extends Component {
     
     this.state = {
       cards: [],
-      comparison: [null, null],
-      dataDescriptions: {},
-      renderChart: false,
       chartData: {},
+      renderChart: false,
+      dataDescriptions: {},
+      comparison: [null, null],
       currentDataFile: undefined
     };
   }
@@ -28,9 +28,17 @@ class App extends Component {
   componentDidMount() {
     this.setState({
       cards: this.cleanData.data,
+      dataDescriptions: this.cleanData.dataDescriptions,
       currentDataFile: this.cleanData.dataDescriptions.kinderData,
-      dataDescriptions: this.cleanData.dataDescriptions
     });
+  }
+
+  changeData = (dataType, dataFile) => {
+    this.displayDataLabel(dataType);
+    this.populateData(dataFile);
+
+    this.dataValidation(dataFile, 0);
+    this.dataValidation(dataFile, 1);
   }
 
   displayDataLabel (dataType) {
@@ -44,26 +52,17 @@ class App extends Component {
     this.updateQuery('');
   }
 
-  changeData = (dataType, dataFile) => {
-    this.displayDataLabel(dataType);
-    this.populateData(dataFile);
-
-    if(this.state.comparison[0] === 'Colorado') {
+  dataValidation (dataFile, index) {
+    if(this.state.comparison[index] === 'Colorado') {
       if (dataFile.indexOf( data => data.location === 'Colorado') === -1) {
+        let comparison = this.state.comparison;
+
+        comparison[index] = null;
         this.setState({
-          comparison: [null, this.state.comparison[1]]
+          comparison
         });
       }
     }
-
-    if (this.state.comparison[1] === 'Colorado') {
-      if (dataFile.indexOf( data => data.location === 'Colorado') === -1) {
-        this.setState({
-          comparison: [this.state.comparison[0], null]
-        });
-      }
-    }
-
   }
 
   updateQuery = (value) => {
@@ -72,16 +71,17 @@ class App extends Component {
 
   selectCard = (location) => {
     const locationIndex = this.state.comparison.indexOf(location);
-    
+
     if (this.state.comparison[0] === null && locationIndex === -1) {
       this.setState( {comparison: [location, this.state.comparison[1]]} );
-
-    } else if (this.state.comparison[1] === null && locationIndex === -1) {      
-      this.setState( {comparison: [this.state.comparison[0], location]} );   
+    } else if (this.state.comparison[1] === null && locationIndex === -1) { 
+      this.setState( {comparison: [this.state.comparison[0], location]} ); 
     } else if (locationIndex !== -1) {
-      let comparison = 
-        [...this.state.comparison.slice(0, locationIndex), null, 
-          ...this.state.comparison.slice(locationIndex + 1)];
+      const comparison = [
+        ...this.state.comparison.slice(0, locationIndex), 
+        null, 
+        ...this.state.comparison.slice(locationIndex + 1)
+      ];
 
       this.setState( {comparison, renderChart: false} );
     }
@@ -103,32 +103,32 @@ class App extends Component {
       <div>
         <div className='main-wrapper'>
           <Nav
-            dataDescriptions={this.state.dataDescriptions}
             changeData={this.changeData}
             currentData={this.state.currentDataFile}
+            dataDescriptions={this.state.dataDescriptions}
           />
           <div className='containers-wrapper'>
             <Header />
             <ComparisonContainer
-              currentDataFile={this.state.currentDataFile}
               selectCard={this.selectCard} 
+              chartStatus={this.chartStatus}
               compareCards={this.compareCards}
               comparison={this.state.comparison}
               cards={this.cleanData.findAllMatches('')} 
-              chartStatus={this.chartStatus}
+              currentDataFile={this.state.currentDataFile}
             />
             {
               this.state.renderChart &&
               <Chart 
-                comparisons={this.state.comparison} 
                 chartStatus={this.chartStatus} 
+                comparisons={this.state.comparison} 
                 cards={this.cleanData.findAllMatches('')} />
             }
             <Search updateQuery={this.updateQuery} />
             <CardContainer 
               cards={this.state.cards}
-              comparison={this.state.comparison}
               selectCard={this.selectCard} 
+              comparison={this.state.comparison}
             />
           </div>
         </div>
