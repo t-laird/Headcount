@@ -59,6 +59,24 @@ class App extends Component {
   changeData = (dataType, dataFile) => {
     this.displayDataLabel(dataType);
     this.populateData(dataFile);
+    console.log(dataFile);
+
+    if(this.state.comparison[0] === 'Colorado') {
+      if (dataFile.indexOf( data => data.location === 'Colorado') === -1) {
+        this.setState({
+          comparison: [null, this.state.comparison[1]]
+        });
+      }
+    }
+
+    if (this.state.comparison[1] === 'Colorado') {
+      if (dataFile.indexOf( data => data.location === 'Colorado') === -1) {
+        this.setState({
+          comparison: [this.state.comparison[0], null]
+        });
+      }
+    }
+
   }
 
   updateQuery = (value) => {
@@ -94,6 +112,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.comparison);
     return (
       <div>
         <div className='main-wrapper'>
