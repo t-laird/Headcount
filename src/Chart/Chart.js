@@ -23,7 +23,7 @@ const Chart = (props) => {
 
   const mappedDates = location1.dates.map( (date, index) => {
     if (location1.dates.length > 10) {
-      return <li style={{width: 600/location1.dates.length + 'px', ['font-size']: '10px'}} key={index}>{date}</li>;
+      return <li style={{width: 600/location1.dates.length + 'px', fontSize: '10px'}} key={index}>{date}</li>;
     } else {
       return <li style={{width: 600/location1.dates.length + 'px'}} key={index}>{date}</li>;
     }
