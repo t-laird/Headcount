@@ -13,16 +13,13 @@ class Search extends Component {
   }
 
   expandSearch() {
-    if (this.state.expanded === 'Search expanded') {
-      this.setState({
-        expanded: 'Search',
-      });
-    } else {
-      this.setState({
-        expanded: 'Search expanded'
-      });
-      this.searchInput.focus();
-    }
+    const expanded = this.state.expanded === 'Search expanded'
+      ? 'Search' 
+      : 'Search expanded';
+            
+    this.setState({
+      expanded
+    });
   }
 
   render() {
@@ -30,7 +27,10 @@ class Search extends Component {
       <div className={this.state.expanded}>
         <i 
           className="icon-search" 
-          onClick={()=> {this.expandSearch();}}></i>
+          onClick={()=> {
+            this.expandSearch();
+            this.searchInput.focus();
+          }}></i>
         <input 
           type='text'
           value={this.state.value}
@@ -41,10 +41,10 @@ class Search extends Component {
           }}
           placeholder='Search'
           onBlur={() => {
-            this.setState({
-              expanded: 'Search',
-              value: ''
-            });
+            this.setState({ expanded: 'Search', value: '' });
+            if (!this.props.numCards) {
+              this.props.updateQuery('');            
+            }
           }}
         />
       </div>
@@ -54,6 +54,7 @@ class Search extends Component {
 
 Search.propTypes = {
   updateQuery: PropTypes.func,
+  numCards: PropTypes.number
 };
 
 export default Search;

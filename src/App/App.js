@@ -124,7 +124,9 @@ class App extends Component {
                 comparisons={this.state.comparison} 
                 cards={this.cleanData.findAllMatches('')} />
             }
-            <Search updateQuery={this.updateQuery} />
+            <Search 
+              updateQuery={this.updateQuery} 
+              numCards={this.state.cards.length} />
             <CardContainer 
               cards={this.state.cards}
               selectCard={this.selectCard} 
