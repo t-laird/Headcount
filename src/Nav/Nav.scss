@@ -1,15 +1,19 @@
+@import '../../fontello-e98b1dbc/css/fontello.css';
+
 .Nav {
   display: flex;
   flex-direction: column;
-  padding: 150px 0px ;
+  padding: 104px 0px ;
   // background: lighten(red, 15%);
   background: #506479;
 
   button {
+    display: flex;
+    align-items: center;
     border: none;
     border-radius: 0px;
     // box-shadow: 3px 3px 3px 3px darken(#617993, 25%);
-    margin: 5px 0;
+    margin: 8px 0;
     cursor: pointer;
     font-size: 12pt;
     width: 100%;
@@ -19,15 +23,19 @@
     padding: 3px;
     outline: none;
     padding-left: 5px;
-    // height: 2.5em;
+    transition: .5s;
+    i {
+      height: 100%;
+      padding-right: 10px;
+    }
     &:hover {
-      background: lighten(red, 45%);
+      background: #fff;
       box-shadow: 1px 1px 1px 1px inset darken(#617993, 45%); 
       color: black;
     }
   }
-  button.active {
-    background: lighten(red, 15%); 
-    box-shadow: 1px 1px 1px 1px darken(red, 45%); 
-  }
+  // button.active {
+  //   background: lighten(red, 15%); 
+  //   box-shadow: 1px 1px 1px 1px darken(red, 45%); 
+  // }
 }
