@@ -7,13 +7,11 @@ const Button = (props) => {
     <button 
       className={props.type}
       onClick={() => {
-        if (!props.chartStatus) {
-          props.changeData(props.type, props.data);
-        } else {
-          props.chartStatus(false);
-        }
+        !props.chartStatus 
+          ? props.changeData(props.type, props.data) 
+          : props.chartStatus(false);
       }}>
-      <i className={props.icon}></i> {props.name}
+      <i className={props.icon}></i>{props.name}
     </button>
   );
 };
