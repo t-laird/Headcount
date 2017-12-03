@@ -41,8 +41,11 @@ const Nav = (props) => {
   const dataTypes = Object.keys(props.dataDescriptions);
 
   const mappedButtons = dataTypes.map((type, index) => {
+    const buttonClass = props.currentData === props.dataDescriptions[type] ? `${type} selected` : type;
+
     return (
       <Button
+        buttonClass={buttonClass}
         key={`button-${index}`}
         icon={icons[index]}
         type={dataTypes[index]}

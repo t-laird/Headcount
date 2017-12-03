@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Button = (props) => {
   return (
     <button 
-      className={props.type}
+      className={props.buttonClass}
       onClick={() => {
         !props.chartStatus 
           ? props.changeData(props.type, props.data) 
