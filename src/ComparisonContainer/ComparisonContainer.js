@@ -10,14 +10,13 @@ const ComparisonContainer = (props) => {
   selectedCards[1] = populateComparison(1);
 
   function populateComparison(position) {
-    let comparisonIndex = 
-      props.comparison[position] 
-        ? props.cards.find(card => {
-          const location = Object.keys(card)[0];
+    let comparisonIndex = props.comparison[position] 
+      ? props.cards.find(card => {
+        const district = Object.keys(card)[0];
 
-          return (props.comparison[position] === location);
-        }) 
-        : null;
+        return (props.comparison[position] === district);
+      }) 
+      : null;
 
     return comparisonIndex;
   }
@@ -26,22 +25,21 @@ const ComparisonContainer = (props) => {
     if (!card) {
       return null;
     }
-    const location = Object.keys(card)[0];
+    const district = Object.keys(card)[0];
 
     return (
       <Card 
-        key={`card-${index}`}
-        selectCard={props.selectCard}
-        data={card[location]}
-        district={location}
+        district={district}
         type='Card selected'
-      />
+        key={`card-${index}`}
+        data={card[district]}
+        selectCard={props.selectCard} />
     );
   });
 
-  const comparisonCard = 
-    (mappedCards[0] && mappedCards[1]) 
-      ? props.compareCards(mappedCards[0].props.district,                               mappedCards[1].props.district) 
+  const comparisonCardData = 
+    (mappedCards[0] && mappedCards[1])
+      ? props.compareCards(mappedCards[0].props.district, mappedCards[1].props.district)
       : null;
   
   return (
@@ -61,30 +59,26 @@ const ComparisonContainer = (props) => {
           !mappedCards[0] &&
           <Card 
             type="Card comparison" 
-            data={{}}
-          />
+            data={{}} />
         }
 
         {
-          comparisonCard &&
+          comparisonCardData &&
           <Card 
             data={{}}
             type="Card displayComparedData"
-            compareData={comparisonCard}
+            compareData={comparisonCardData}
             district1={mappedCards[0].props.district.toUpperCase()}
             district2={mappedCards[1].props.district.toUpperCase()}
-            chartStatus={props.chartStatus}
-          />
+            chartStatus={props.chartStatus} />
         }
         {
-          !comparisonCard &&
+          !comparisonCardData &&
           <Card
             type="Card compared"
-            data={{}}
-          />
+            data={{}} />
         }
 
-        
         {
           mappedCards[1] &&
           mappedCards[1]
@@ -93,7 +87,7 @@ const ComparisonContainer = (props) => {
           !mappedCards[1] &&
           <Card 
             type="Card comparison" 
-            data={{}}/>
+            data={{}} />
         }
       </div>
     </div>
@@ -104,7 +98,9 @@ ComparisonContainer.propTypes = {
   cards: PropTypes.array,
   selectCard: PropTypes.func,
   comparison: PropTypes.array,
-  compareCards: PropTypes.func
+  chartStatus: PropTypes.func,
+  compareCards: PropTypes.func,
+  currentDataFile: PropTypes.string
 };
 
 export default ComparisonContainer;
