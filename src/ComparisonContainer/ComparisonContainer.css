@@ -4,12 +4,12 @@
   .ComparisonContainer .instructions {
     display: flex;
     justify-content: space-around;
-    width: 690px;
-    margin-bottom: -12px; }
+    margin-bottom: -12px;
+    width: 690px; }
     .ComparisonContainer .instructions h5 {
-      margin: 0px;
       color: grey;
-      font-style: italic; }
+      font-style: italic;
+      margin: 0px; }
   .ComparisonContainer .cards {
     display: flex;
     flex-wrap: wrap;
