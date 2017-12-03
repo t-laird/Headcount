@@ -100,6 +100,7 @@ class App extends Component {
           <Nav
             dataDescriptions={this.state.dataDescriptions}
             changeData={this.changeData}
+            currentData={this.state.currentDataFile}
           />
           <div className='containers-wrapper'>
             <Header />
