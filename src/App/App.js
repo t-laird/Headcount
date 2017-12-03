@@ -21,7 +21,6 @@ class App extends Component {
       dataDescriptions: {},
       renderChart: false,
       chartData: {},
-      dataDescription: {},
       currentDataFile: undefined
     };
 
