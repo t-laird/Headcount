@@ -4,8 +4,8 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  top: 220px;
-  left: calc(50% - 300px);
+  top: 180px;
+  left: calc(50% - 160px);
   height: 380px;
   width: 600px;
   background-color: white;
@@ -41,6 +41,17 @@
     }
     button {
       z-index: 10;
+      border-radius: 0px;
+      border: none;
+      background: lighten(red, 15%);
+      width: 100px;
+      margin-left: 100px;
+      color: #fff;
+      font-size: 14pt;
+      cursor: pointer;
+      &:hover {
+        background: #506479;
+      }
     }
   }
   ul {
