@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 
 const Chart = (props) => {
   const comparedLocations = props.cards.filter( card => {
-    return Object.keys(card)[0] === props.comparisons[0] || Object.keys(card)[0] === props.comparisons[1]
+    return Object.keys(card)[0] === props.comparisons[0] || Object.keys(card)[0] === props.comparisons[1];
   });
 
   const location1 = Object.assign({}, 
@@ -44,6 +44,6 @@ const Chart = (props) => {
       </ul>
     </div>
   );
-}
+};
 
 export default Chart;
