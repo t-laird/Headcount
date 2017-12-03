@@ -7,20 +7,17 @@ const Chart = (props) => {
   const comparedLocations = props.cards.filter( card => {
     return Object.keys(card)[0] === props.comparisons[0] || Object.keys(card)[0] === props.comparisons[1];
   });
-
   const location1 = Object.assign({}, 
     {district: Object.keys(comparedLocations[0])[0]}, 
     {scores: Object.values(comparedLocations[0][Object.keys(comparedLocations[0])[0]])}, 
     {dates: Object.keys(comparedLocations[0][Object.keys(comparedLocations[0])[0]])}
   );
-
   const location2 = 
     Object.assign({}, 
       {district: Object.keys(comparedLocations[1])[0]}, 
       {scores: Object.values(comparedLocations[1][Object.keys(comparedLocations[1])[0]])}, 
       {dates: Object.keys(comparedLocations[1][Object.keys(comparedLocations[1])[0]])}
     );
-
   const mappedDates = location1.dates.map( (date, index) => {
     if (location1.dates.length > 10) {
       return <li style={{width: 600/location1.dates.length + 'px', fontSize: '10px'}} key={index}>{date}</li>;
@@ -28,8 +25,8 @@ const Chart = (props) => {
       return <li style={{width: 600/location1.dates.length + 'px'}} key={index}>{date}</li>;
     }
   });
-
   let dataMax = 0;
+
   location1.scores.forEach( score => {
     if (score > dataMax) {
       dataMax = score;

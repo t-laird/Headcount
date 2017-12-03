@@ -16,80 +16,92 @@ export default class DistrictRepository {
   }
 
   filterData(data) {
-    let dataObj = data.reduce( (result, dataPoint) => {
+    const dataObj = this.createDataObj(data);
+    const dataArray = Object.keys(dataObj).map( location => ({[location]: dataObj[location]}) );
       
-      let refineData = 
-        isNaN(parseFloat(dataPoint.Data)) ?
-          0 : 
-          parseFloat(dataPoint.Data.toFixed(3));
+    this.data = dataArray;    
+  }
 
-      result[dataPoint.Location] = 
+  createDataObj(data) {
+    return data.reduce( (dataObj, dataPoint) => {
+      const refineData = isNaN(parseFloat(dataPoint.Data)) 
+        ? 0 
+        : parseFloat(dataPoint.Data.toFixed(3));
+
+      dataObj[dataPoint.Location] = 
         {
-          ...result[dataPoint.Location],
+          ...dataObj[dataPoint.Location],
           [dataPoint.TimeFrame]: refineData
         };
 
-      return result;
+      return dataObj;
     }, {});
-
-    let dataArray = Object.keys(dataObj).map( location => {
-      return {[location]: dataObj[location]};
-    });
-
-    this.data = dataArray;    
   }
 
   findByName(query) {
     if (!query) {
       return undefined;
     }
+    const caseInsensitiveQuery = new RegExp(query, 'gi'); 
+    const foundData = this.data.find( dataPoint => {
+      const district = Object.keys(dataPoint)[0];
 
-    let queryRegEx = new RegExp(query, 'gi'); 
-    
-    let foundData = this.data.find( dataPoint => {
-      return queryRegEx.test(Object.keys(dataPoint)[0]);
+      return caseInsensitiveQuery.test(district);
     });
 
     if (!foundData) {
       return undefined;
     }
-
-    return {
-      location: Object.keys(foundData)[0].toUpperCase(), 
-      data: foundData[Object.keys(foundData)[0]]
+    const location = Object.keys(foundData)[0].toUpperCase();
+    const data = foundData[Object.keys(foundData)[0]];
+    const queryMatch = {
+      location, 
+      data
     };
+    
+    return queryMatch;
   }
 
   findAllMatches(query) {
-    let regex = new RegExp(query, 'gi');
+    const caseInsensitiveQuery = new RegExp(query, 'gi');
 
-    return this.data.filter(dataPoint => 
-      regex.test(Object.keys(dataPoint)[0])
-    );
+    return this.data.filter(dataPoint =>  {
+      const district = Object.keys(dataPoint)[0];
+
+      return caseInsensitiveQuery.test(district);
+    });
   }
 
   findAverage(query) {
-    let searchedDist = this.findByName(query);
-    let numYears = Object.keys(searchedDist.data).length;
-    let totalScore = Object.keys(searchedDist.data).reduce((total, year) => {
+    const searchedDist = this.findByName(query);
+    const numYears = Object.keys(searchedDist.data).length;
+    const years = Object.keys(searchedDist.data);
+
+    const totalScore = years.reduce((total, year) => {
       total += searchedDist.data[year];
       return total;
     }, 0);
-    let average = totalScore/numYears;
 
-    return parseFloat(average.toFixed(3));
+    const average = totalScore/numYears;
+    const roundedAverage = parseFloat(average.toFixed(3));
+
+    return roundedAverage;
   }
 
   compareDistrictAverages(dist1, dist2) {
-    let dist1Avg = this.findAverage(dist1);
-    let dist2Avg = this.findAverage(dist2);
-    let difference = dist1Avg > dist2Avg ? 
-      dist1Avg/dist2Avg - 1 : 
-      dist2Avg/dist1Avg - 1;
-        
-    return {
+    const dist1Avg = this.findAverage(dist1);
+    const dist2Avg = this.findAverage(dist2);
+
+    const difference = dist1Avg > dist2Avg 
+      ? dist1Avg/dist2Avg - 1 
+      : dist2Avg/dist1Avg - 1;
+    
+    const comparisonObj = {
       [dist1.toUpperCase()]: dist1Avg, 
       [dist2.toUpperCase()]: dist2Avg, 
-      compared: parseFloat(difference.toFixed(3))};
+      compared: parseFloat(difference.toFixed(3))
+    };
+
+    return comparisonObj;
   }
 }
