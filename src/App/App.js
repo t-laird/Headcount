@@ -26,22 +26,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const dataDescriptions = {
-      kinderData: 'Kindergartners in full day programs', 
-      gradData: 'High-school graduation rates',
-      enrollment: 'Student enrollment',
-      onlineEnrollment: 'Online student enrollment',
-      householdIncome: 'Median household income',
-      studentsInPoverty: 'School aged children in poverty',
-      titleIstudents: 'Students qualifying for Title I',
-      specialEducation: 'Students in special education programs',
-      remediationInHigherEducation: 'Remediation in higher education'
-    };
-
     this.setState({
       cards: this.cleanData.data,
-      currentDataFile: dataDescriptions.kinderData,
-      dataDescriptions
+      currentDataFile: this.cleanData.dataDescriptions.kinderData,
+      dataDescriptions: this.cleanData.dataDescriptions
     });
   }
 
@@ -59,7 +47,6 @@ class App extends Component {
   changeData = (dataType, dataFile) => {
     this.displayDataLabel(dataType);
     this.populateData(dataFile);
-    console.log(dataFile);
 
     if(this.state.comparison[0] === 'Colorado') {
       if (dataFile.indexOf( data => data.location === 'Colorado') === -1) {
@@ -112,7 +99,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.comparison);
     return (
       <div>
         <div className='main-wrapper'>
