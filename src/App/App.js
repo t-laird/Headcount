@@ -21,7 +21,6 @@ class App extends Component {
       dataDescriptions: {},
       renderChart: false,
       chartData: {},
-      dataDescription: {},
       currentDataFile: undefined
     };
 
@@ -43,7 +42,7 @@ class App extends Component {
       studentsInPoverty: 'School aged children in poverty',
       specialEducation: 'Students in special education programs',
       titleIstudents: 'Students qualifying for Title I'
-    }
+    };
 
     this.setState({
       cards: this.cleanData.data,
@@ -55,7 +54,7 @@ class App extends Component {
   displayDataLabel(dataType) {
     const currentDataFile = this.state.dataDescriptions[dataType];
 
-    this.setState( {currentDataFile} )
+    this.setState( {currentDataFile} );
   }
 
   populateData(dataFile) {
@@ -108,7 +107,7 @@ class App extends Component {
             changeData={this.changeData}
           />
           <div className='containers-wrapper'>
-        <Header />
+            <Header />
             <ComparisonContainer
               currentDataFile={this.state.currentDataFile}
               selectCard={this.selectCard} 
@@ -123,10 +122,14 @@ class App extends Component {
               comparison={this.state.comparison}
               selectCard={this.selectCard} 
             />
-        {
-          this.state.renderChart &&
-          <Chart chartData={this.state.chartData} comparisons={this.state.comparison} chartStatus={this.chartStatus} cards={this.cleanData.findAllMatches('')} />
-        }
+            {
+              this.state.renderChart &&
+              <Chart 
+                chartData={this.state.chartData} 
+                comparisons={this.state.comparison} 
+                chartStatus={this.chartStatus} 
+                cards={this.cleanData.findAllMatches('')} />
+            }
           </div>
         </div>
       </div>

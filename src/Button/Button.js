@@ -15,8 +15,8 @@ const Button = (props) => {
       }}>
       <i className={props.icon}></i> {props.name}
     </button>
-  )
-}
+  );
+};
 
 Button.propTypes = {
   data: PropTypes.array,
