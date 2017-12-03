@@ -14,91 +14,59 @@ import specialEducation from '../../data/special_education.js';
 import titleIstudents from '../../data/title_i_students.js';
 
 
+
 const Nav = (props) => {
+  const dataFiles = 
+    [kinderData, 
+      gradData, 
+      enrollment, 
+      onlineEnrollment, 
+      householdIncome, 
+      studentsInPoverty,
+      titleIstudents,
+      specialEducation,
+      remediationInHigherEducation];
+
+  const icons = 
+    ['icon-child', 
+      'icon-graduation-cap', 
+      'icon-pencil', 
+      'icon-laptop', 
+      'icon-dollar', 
+      'icon-traffic-cone', 
+      'icon-doc-text', 
+      'icon-handshake-o', 
+      'icon-ccw'];
+
+  const dataTypes = Object.keys(props.dataDescriptions);
+
+  const mappedButtons = dataTypes.map((type, index) => {
+    return (
+      <Button
+        key={`button-${index}`}
+        icon={icons[index]}
+        type={dataTypes[index]}
+        changeData={props.changeData}
+        name={props.dataDescriptions[type]} 
+        data={dataFiles[index]} />
+    );
+  });
+
   return (
     <div className='Nav'>
-      <Button
-        icon='icon-child'
-        changeData={props.changeData}
-        type='kinderData'
-        name={props.dataDescriptions.kinderData} 
-        data={kinderData}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        icon='icon-graduation-cap'
-        changeData={props.changeData}
-        type='gradData'
-        name={props.dataDescriptions.gradData} 
-        data={gradData}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        icon='icon-pencil'
-        changeData={props.changeData}
-        type='enrollment'
-        name={props.dataDescriptions.enrollment} 
-        data={enrollment}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        icon='icon-laptop'
-        changeData={props.changeData}
-        type='onlineEnrollment'
-        name={props.dataDescriptions.onlineEnrollment} 
-        data={onlineEnrollment}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        icon='icon-dollar'
-        changeData={props.changeData}
-        type='householdIncome' 
-        name={props.dataDescriptions.householdIncome} 
-        data={householdIncome}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        icon='icon-traffic-cone'
-        changeData={props.changeData}
-        type='studentsInPoverty'
-        name={props.dataDescriptions.studentsInPoverty}  
-        data={studentsInPoverty}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        icon='icon-doc-text'
-        changeData={props.changeData}
-        type='titleIstudents' 
-        name={props.dataDescriptions.titleIstudents} 
-        data={titleIstudents}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        icon='icon-handshake-o'
-        changeData={props.changeData}
-        type='specialEducation'
-        name={props.dataDescriptions.specialEducation}  
-        data={specialEducation}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
-      <Button
-        icon='icon-ccw'
-        changeData={props.changeData}
-        type='remediationInHigherEducation'
-        name={props.dataDescriptions.remediationInHigherEducation}  
-        data={remediationInHigherEducation}
-        populateData={props.populateData}
-        displayDataLabel={props.displayDataLabel}/>
+      {
+        mappedButtons
+      }
     </div>
   );
 };
 
 Nav.propTypes = {
   data: PropTypes.array,
+  icon: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string,
-  populateData: PropTypes.func,
-  displayDataLabel: PropTypes.func
+  changeData: PropTypes.func
 };
 
 export default Nav;

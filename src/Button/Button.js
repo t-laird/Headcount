@@ -22,8 +22,7 @@ Button.propTypes = {
   data: PropTypes.array,
   type: PropTypes.string,
   name: PropTypes.string,
-  populateData: PropTypes.func,
-  displayDataLabel: PropTypes.func
+  changeData: PropTypes.func
 };
 
 export default Button;
