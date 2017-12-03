@@ -24,7 +24,7 @@ class App extends Component {
       currentDataFile: undefined
     };
 
-    this.updateQuery = this.updateQuery.bind(this);
+    // this.updateQuery = this.updateQuery.bind(this);
     this.selectCard = this.selectCard.bind(this);
     this.compareCards = this.compareCards.bind(this);
     this.chartStatus = this.chartStatus.bind(this);
@@ -67,7 +67,7 @@ class App extends Component {
     this.populateData(dataFile);
   }
 
-  updateQuery(value) {
+  updateQuery = (value) => {
     this.setState( {cards: this.cleanData.findAllMatches(value)});
   }
 

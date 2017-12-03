@@ -6,9 +6,11 @@ module.exports = {
         "es6": true
     },
     "extends": "eslint:recommended",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
+            "arrowFunctions":true,
             "jsx": true
         },
         "sourceType": "module"
@@ -27,6 +29,12 @@ module.exports = {
             "error",
             "unix"
         ],
+        "key-spacing": [
+            "error", {
+            "beforeColon": false,
+            "afterColon": true
+            }
+        ],
         "quotes": [
             "error",
             "single"
@@ -38,6 +46,9 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "globals": {
+            "mount": true
+        }
     }
 };

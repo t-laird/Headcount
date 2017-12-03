@@ -29,10 +29,10 @@ const Chart = (props) => {
   return (
     <div className="Chart">
       <Sparklines height={50} width={100} max={1.0} min={0} data={location1.scores}>
-        <SparklinesLine color="red" style={{fill:'none'}}/>
+        <SparklinesLine color="red" style={{fill: 'none'}}/>
       </Sparklines>
       <Sparklines height={50} width={100} max={1.0} min={0} data={location2.scores}>
-        <SparklinesLine color="blue" style={{fill:'none'}}/>
+        <SparklinesLine color="blue" style={{fill: 'none'}}/>
       </Sparklines>
       <div className="chartNav">
         <h5>{location1.district}<div className="district1key"></div></h5>
