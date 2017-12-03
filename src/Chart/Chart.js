@@ -21,19 +21,39 @@ const Chart = (props) => {
       {dates: Object.keys(comparedLocations[1][Object.keys(comparedLocations[1])[0]])}
     );
 
-
   const mappedDates = location1.dates.map( (date, index) => {
     return <li style={{width: 600/location1.dates.length + 'px'}} key={index}>{date}</li>;
   });
 
+  let dataMax = 0;
+  location1.scores.forEach( score => {
+    if (score > dataMax) {
+      dataMax = score;
+    }
+  });
+
+  location2.scores.forEach( score => {
+    if (score > dataMax) {
+      dataMax = score;
+    }
+  });
+
+  dataMax = Math.max(1, dataMax);
+
   return (
     <div className="Chart">
-      <Sparklines height={50} width={100} max={1.0} min={0} data={location1.scores}>
-        <SparklinesLine color="red" style={{fill: 'none'}}/>
-      </Sparklines>
-      <Sparklines height={50} width={100} max={1.0} min={0} data={location2.scores}>
-        <SparklinesLine color="blue" style={{fill: 'none'}}/>
-      </Sparklines>
+      <div className="chart-container">
+        <div className="axis">
+          <span>0</span>
+          <span>{dataMax}</span>
+        </div>
+        <Sparklines height={50} width={100} max={dataMax} min={0} data={location1.scores}>
+          <SparklinesLine color="red" style={{fill: 'none'}}/>
+        </Sparklines>
+        <Sparklines height={50} width={100} max={dataMax} min={0} data={location2.scores}>
+          <SparklinesLine color="blue" style={{fill: 'none'}}/>
+        </Sparklines>
+      </div>
       <div className="chartNav">
         <h5>{location1.district}<div className="district1key"></div></h5>
         <h5>{location2.district}<div className="district2key"></div></h5>
