@@ -23,12 +23,6 @@ class App extends Component {
       chartData: {},
       currentDataFile: undefined
     };
-
-    // this.updateQuery = this.updateQuery.bind(this);
-    this.selectCard = this.selectCard.bind(this);
-    this.compareCards = this.compareCards.bind(this);
-    this.chartStatus = this.chartStatus.bind(this);
-    this.changeData = this.changeData.bind(this);
   }
 
   componentDidMount() {
@@ -51,18 +45,18 @@ class App extends Component {
     });
   }
 
-  displayDataLabel(dataType) {
+  displayDataLabel (dataType) {
     const currentDataFile = this.state.dataDescriptions[dataType];
 
     this.setState( {currentDataFile} );
   }
 
-  populateData(dataFile) {
+  populateData (dataFile) {
     this.cleanData = new DistrictRepository(dataFile);
     this.updateQuery('');
   }
 
-  changeData(dataType, dataFile) {
+  changeData = (dataType, dataFile) => {
     this.displayDataLabel(dataType);
     this.populateData(dataFile);
   }
@@ -71,7 +65,7 @@ class App extends Component {
     this.setState( {cards: this.cleanData.findAllMatches(value)});
   }
 
-  selectCard(location) {
+  selectCard = (location) => {
     const locationIndex = this.state.comparison.indexOf(location);
     
     if (this.state.comparison[0] === null && locationIndex === -1) {
@@ -88,11 +82,11 @@ class App extends Component {
     this.updateQuery('');
   }
 
-  compareCards(district1, district2) {
+  compareCards = (district1, district2) => {
     return this.cleanData.compareDistrictAverages(district1, district2);  
   }
 
-  chartStatus(status) {
+  chartStatus = (status) => {
     this.setState({
       renderChart: status
     });
