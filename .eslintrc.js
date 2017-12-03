@@ -6,9 +6,11 @@ module.exports = {
         "es6": true
     },
     "extends": "eslint:recommended",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
+            "arrowFunctions":true,
             "jsx": true
         },
         "sourceType": "module"
