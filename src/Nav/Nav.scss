@@ -34,8 +34,8 @@
       color: black;
     }
   }
-  // button.active {
-  //   background: lighten(red, 15%); 
-  //   box-shadow: 1px 1px 1px 1px darken(red, 45%); 
-  // }
+  button.selected {
+  background: darken(#506479, 10%);
+    box-shadow: 1px 1px 1px 1px inset darken(#617993, 45%); 
+  }
 }

@@ -27,3 +27,6 @@
       background: #fff;
       box-shadow: 1px 1px 1px 1px inset #060709;
       color: black; }
+  .Nav button.selected {
+    background: #3c4b5a;
+    box-shadow: 1px 1px 1px 1px inset #060709; }
