@@ -4,8 +4,9 @@ import './Card.css';
 
 const Card = (props) => {
   const arrayOfQualities = ['low', 'low-average', 'average', 'high-average', 'high'];
+
   const mappedData = Object.keys(props.data).map((dataPoint, index) => {
-    const liStyle = props.data[dataPoint] > 1 ? 4 : Math.floor(props.data[dataPoint] * 4.999);   
+    const liStyle = props.data[dataPoint] > 1 ? 4 : Math.floor(props.data[dataPoint] * 4.999); 
 
     return (
       <li key={`li-${index}`}>
@@ -55,16 +56,14 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  type: PropTypes.string,
   data: PropTypes.object,
+  type: PropTypes.string,
+  selectCard: PropTypes.func,
+  chartStatus: PropTypes.func,
   district: PropTypes.string,
   district1: PropTypes.string,
   district2: PropTypes.string,
-  selectCard: PropTypes.func,
-  compareData: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.object
-  ])
+  compareData: PropTypes.object
 };
 
 export default Card;
