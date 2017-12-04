@@ -1,31 +1,37 @@
-$card-box-shadow: 5px 5px 5px 5px darkgrey;
-$card-hover-box-shadow: 1px 1px 1px 1px black;
-
-$card-selected-background: lighten(red, 45%);
-$comparison-empty-background: lightgrey;
-
-$comparison-instructions-text: grey;
+/* main styles */
+$main-color: #ff4d4d;
+$secondary-color: #506479;
 
 $dashed-border: 1px dashed black;
 $solid-border: 1px solid black;
 
-$main-color: #ff4d4d;
-$secondary-color: #506479;
-
+/* Nav styles */
 $nav-button-box-shadow: inset 1px 1px 1px 1px darken(#617993, 45%);
 $nav-button-selected: darken(#506479, 10%);
 
-$chart-background: white;
-$chart-box-shadow: 8px 8px 8px 8px darkgrey;
-$chart-hover-box-shadow: 1px 1px 1px 1px darkgrey;
+/* Card styles */
+$card-box-shadow: 5px 5px 5px 5px darkgrey;
+$card-hover-box-shadow: 1px 1px 1px 1px black;
+$card-selected-background: lighten(red, 45%);
 
+/* apple-icon styles */
 $low-color: red;
 $low-average-color: rgb(255, 77, 0);
 $average-color: rgb(255, 183, 0);
 $high-average-color: rgb(149, 255, 0);
 $high-color: rgb(64, 176, 9);
 
-$graph-button-color: red;
+/* Comparison styles */
+$comparison-empty-background: lightgrey;
+$comparison-instructions-text: grey;
 
+/* Chart styles */
+$chart-background: white;
+$chart-box-shadow: 8px 8px 8px 8px darkgrey;
+$chart-hover-box-shadow: 1px 1px 1px 1px darkgrey;
+
+$graph-button-color: red;
 $graph-color1: red;
 $graph-color2: blue;
+
+
