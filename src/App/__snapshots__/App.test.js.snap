@@ -13755,6 +13755,7 @@ ShallowWrapper {
               <Search
                 numCards={181}
                 updateQuery={[Function]} />,
+              false,
               <CardContainer
                 cards={
                                 Array [
@@ -19244,6 +19245,7 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
+            false,
             Object {
               "instance": null,
               "key": undefined,
@@ -35730,6 +35732,7 @@ ShallowWrapper {
                 <Search
                   numCards={181}
                   updateQuery={[Function]} />,
+                false,
                 <CardContainer
                   cards={
                                     Array [
@@ -41219,6 +41222,7 @@ ShallowWrapper {
                 "rendered": null,
                 "type": [Function],
               },
+              false,
               Object {
                 "instance": null,
                 "key": undefined,
