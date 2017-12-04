@@ -12,7 +12,10 @@ $solid-border: 1px solid black;
 $main-color: #ff4d4d;
 $secondary-color: #506479;
 
-$chart-background: #fff;
+$nav-button-box-shadow: inset 1px 1px 1px 1px darken(#617993, 45%);
+$nav-button-selected: darken(#506479, 10%);
+
+$chart-background: white;
 $chart-box-shadow: 8px 8px 8px 8px darkgrey;
 $chart-hover-box-shadow: 1px 1px 1px 1px darkgrey;
 

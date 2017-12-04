@@ -1,3 +1,5 @@
+@import '../variable.scss';
+
 .Chart {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   justify-content: space-between;
 
   background: $chart-background;
-  border: $solid;
+  border: $solid-border;
   border-radius: 5px;
   box-shadow: $chart-box-shadow;
 
@@ -117,7 +119,7 @@
     li {
       display: inline-block;
       text-align: center;
-      
+
       padding-top: 5px;
     }
   }

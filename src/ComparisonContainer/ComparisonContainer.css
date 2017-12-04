@@ -14,15 +14,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border: 1px dashed black;
     margin: 15px auto 0;
-    width: 780px;
-    border: 1px dashed black; }
+    width: 780px; }
     .ComparisonContainer .cards h3 {
       color: #ff4d4d;
-      width: 100%;
-      text-align: center;
       font-size: 18pt;
-      margin: 20px auto; }
+      text-align: center;
+      margin: 20px auto;
+      width: 100%; }
 
 @media screen and (max-width: 945px) {
   .ComparisonContainer {

@@ -1,28 +1,31 @@
+@import '../variable.scss';
 @import '../../fontello-e98b1dbc/css/fontello.css';
 
 .Nav {
   display: flex;
   flex-direction: column;
-  padding: 104px 0px ;
-  // background: lighten(red, 15%);
-  background: #506479;
 
+  background: $secondary-color;
+
+  padding: 104px 0px ;
   button {
     display: flex;
     align-items: center;
+    text-align: left;
+
+    background-color: transparent;
     border: none;
     border-radius: 0px;
-    // box-shadow: 3px 3px 3px 3px darken(#617993, 25%);
+    outline: none;
+    
+    width: 100%;
     margin: 8px 0;
+    padding: 3px;
+    padding-left: 5px;
+
+    color: white;
     cursor: pointer;
     font-size: 12pt;
-    width: 100%;
-    background-color: transparent;
-    color: white;
-    text-align: left;
-    padding: 3px;
-    outline: none;
-    padding-left: 5px;
     transition: .5s;
     i {
       height: 100%;
@@ -30,12 +33,12 @@
     }
     &:hover {
       background: #fff;
-      box-shadow: 1px 1px 1px 1px inset darken(#617993, 45%); 
+      box-shadow: $nav-button-box-shadow; 
       color: black;
     }
   }
   button.selected {
-  background: darken(#506479, 10%);
-    box-shadow: 1px 1px 1px 1px inset darken(#617993, 45%); 
+    background: $nav-button-selected;
+    box-shadow: $nav-button-box-shadow; 
   }
 }
