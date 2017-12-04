@@ -40,8 +40,8 @@ describe('App test', () => {
 
     clickedCard.simulate('click');
     expect(renderedApp.state('comparison')).toEqual(['ACADEMY 20', null]);
-    expect(renderedApp.find('.selected').length).toEqual(2);
-    expect(renderedApp.find('.selected').at(0).find('h4').text()).toEqual('ACADEMY 20');
+    expect(renderedApp.find('CardContainer').find('.selected').length).toEqual(1);
+    expect(renderedApp.find('.selected').at(1).find('h4').text()).toEqual('ACADEMY 20');
   });
 
   it('Should replace the second null when a second card is clicked', () => {
@@ -55,8 +55,8 @@ describe('App test', () => {
     expect(renderedApp.state('comparison')).toEqual(['ACADEMY 20', null]);
     clickedCard2.simulate('click');
     expect(renderedApp.state('comparison')).toEqual(['ACADEMY 20', 'ADAMS COUNTY 14']);
-    expect(renderedApp.find('.selected').length).toEqual(4);
-    expect(renderedApp.find('.selected').at(1).find('h4').text()).toEqual('ADAMS COUNTY 14');
+    expect(renderedApp.find('CardContainer').find('.selected').length).toEqual(2);
+    expect(renderedApp.find('CardContainer').find('.selected').at(1).find('h4').text()).toEqual('ADAMS COUNTY 14');
   });
 
   it('Should not add anything to the comparison array when a third card is clicked', () => {
@@ -71,7 +71,7 @@ describe('App test', () => {
     clickedCard1.simulate('click');
     clickedCard2.simulate('click');
     clickedCard3.simulate('click');
-    expect(renderedApp.find('.selected').length).toEqual(4);
+    expect(renderedApp.find('CardContainer').find('.selected').length).toEqual(2);
     expect(renderedApp.state('comparison')).toEqual(['ACADEMY 20', 'ADAMS COUNTY 14']);        
   });
 
@@ -81,10 +81,10 @@ describe('App test', () => {
     const clickedCard1 = renderedApp.find('.card-content').at(1);
 
     clickedCard1.simulate('click');
-    expect(renderedApp.find('.selected').length).toEqual(2);
+    expect(renderedApp.find('CardContainer').find('.selected').length).toEqual(1);
     expect(renderedApp.state('comparison')).toEqual(['ACADEMY 20', null]);
     clickedCard1.simulate('click');
-    expect(renderedApp.find('.selected').length).toEqual(0);
+    expect(renderedApp.find('CardContainer').find('.selected').length).toEqual(0);
     expect(renderedApp.state('comparison')).toEqual([null, null]);    
   });
 
@@ -99,7 +99,7 @@ describe('App test', () => {
     clickedCard2.simulate('click');
     expect(renderedApp.find('.displayComparedData').length).toEqual(1);
     expect(renderedApp.find('.displayComparedData').find('h3').at(0).text()).toEqual(' ACADEMY 20 ');
-    expect(renderedApp.find('.displayComparedData').find('h3').at(1).text()).toEqual(' Percentage Difference: 74.2%');
+    expect(renderedApp.find('.displayComparedData').find('h3').at(1).text()).toEqual('Percentage Difference: 74.2%');
     expect(renderedApp.find('.displayComparedData').find('h3').at(2).text()).toEqual(' ADAMS COUNTY 14 ');  
   });
 
@@ -111,5 +111,63 @@ describe('App test', () => {
     expect(renderedApp.find('Card').length).toEqual(184);
     searchInput.simulate('change', {target: { value: 'col'}});
     expect(renderedApp.find('Card').length).toEqual(5);
+  });
+
+  it('Should render the nav component with the default kindergarten data selected', () => {
+    const renderedApp = mount(<App />);
+
+    expect(renderedApp.find('Nav').find('.selected').length).toEqual(1);
+    expect(renderedApp.find('Nav').find('.selected').text()).toEqual("Kindergartners in full day programs");
+  });
+
+  it('Should change the selected data when a different option is selected in the nav', () => {
+    const renderedApp = mount(<App />);
+    const navButton = renderedApp.find('Nav').find('Button').at(5);
+
+    expect(renderedApp.find('Nav').find('.selected').length).toEqual(1);
+    expect(renderedApp.find('Nav').find('.selected').text()).toEqual("Kindergartners in full day programs");
+    navButton.simulate('click');
+    expect(renderedApp.find('Nav').find('.selected').length).toEqual(1);
+    expect(renderedApp.find('Nav').find('.selected').text()).toEqual("School aged children in poverty");
+    expect(renderedApp.find('Card').length).toEqual(183);
+    expect(renderedApp.state('currentDataFile')).toEqual('School aged children in poverty');
+  });
+
+  it('Should render the chart when the chart icon is clicked in the comparison card', () => {
+    const renderedApp = mount(<App />);
+    const clickedCard1 = renderedApp.find('.card-content').at(1);
+    const clickedCard2 = renderedApp.find('.card-content').at(2);
+
+    clickedCard1.simulate('click');
+    clickedCard2.simulate('click');
+
+    const comparisonCard = renderedApp.find('ComparisonContainer').find('.displayComparedData');
+    const chartButton = comparisonCard.find('.icon-chart-line');
+
+    expect(renderedApp.find('Chart').length).toEqual(0);
+
+    chartButton.simulate('click');
+
+    expect(renderedApp.find('Chart').length).toEqual(1);
+  });
+
+  it('Should close the chart when the close button is clicked', () => {
+    const renderedApp = mount(<App />);
+    const clickedCard1 = renderedApp.find('.card-content').at(1);
+    const clickedCard2 = renderedApp.find('.card-content').at(2);
+
+    clickedCard1.simulate('click');
+    clickedCard2.simulate('click');
+
+    const comparisonCard = renderedApp.find('ComparisonContainer').find('.displayComparedData');
+    const chartButton = comparisonCard.find('.icon-chart-line');
+
+    chartButton.simulate('click');
+    expect(renderedApp.find('Chart').length).toEqual(1);
+
+    const closeChartButton = renderedApp.find('Chart').find('Button');
+    
+    closeChartButton.simulate('click');
+    expect(renderedApp.find('Chart').length).toEqual(0);
   });
 });

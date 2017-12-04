@@ -43,7 +43,7 @@ describe('Card test', () => {
         data={{}}
         district1="Colorado" 
         district2='ADAMS COUNTY 14' 
-        compareData={true}/>);
+        compareData={{}}/>);
 
     expect(renderedCard.find('h3').length).toEqual(3);
     expect(renderedCard.find('h4').length).toEqual(0);

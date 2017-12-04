@@ -12,19 +12,21 @@ describe('Button test', () => {
       <Button
         icon='icon-child'
         type='kinderData' 
+        buttonClass='kinderData' 
         changeData={mockFunc}
         name='Kindergartens in full day programs'
-        data={[]}/>); 
+        data={[]} />); 
 
     expect(renderedButton.find('.kinderData').length).toEqual(1);
     expect(renderedButton.find('i').length).toEqual(1);
   });
 
-  it('should render the correctly in Chart', () => {
+  it('should render correctly in Chart', () => {
     const mockFunc = jest.fn();
 
     const renderedButton = shallow(
       <Button 
+        buttonClass='chart-close'
         type='chart-close'
         chartStatus={mockFunc}
         name='Close' />);
