@@ -54,13 +54,13 @@ class App extends Component {
 
   dataValidation (dataFile, index) {
     if(this.state.comparison[index] === 'Colorado') {
-      if (dataFile.indexOf( data => data.location === 'Colorado') === -1) {
+      if (dataFile.findIndex( data => data.Location === 'Colorado') === -1) {
         let comparison = this.state.comparison;
 
         comparison[index] = null;
         this.setState({
-          comparison,
-          chartStatus: false
+          renderChart: false,
+          comparison
         });
       }
     }
