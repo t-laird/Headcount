@@ -128,6 +128,10 @@ class App extends Component {
             <Search 
               updateQuery={this.updateQuery} 
               numCards={this.state.cards.length} />
+            {
+              !this.state.cards.length &&
+              <h1 className='no-match'>Sorry, No Matches...</h1>
+            }
             <CardContainer 
               cards={this.state.cards}
               selectCard={this.selectCard} 
