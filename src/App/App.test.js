@@ -133,6 +133,26 @@ describe('App test', () => {
     expect(renderedApp.state('currentDataFile')).toEqual('School aged children in poverty');
   });
 
+  it.only('Should remove Colorado when a data set not including Colorado is selected', () => {
+    const renderedApp = mount(<App />);
+    const medianIncomeButton = renderedApp.find('Nav').find('Button').at(4);
+    const povertyButton = renderedApp.find('Nav').find('Button').at(5);
+    const clickedCard1 = renderedApp.find('.card-content').at(0);
+    const clickedCard2 = renderedApp.find('.card-content').at(1);
+
+    clickedCard1.simulate('click');
+    clickedCard2.simulate('click');
+    expect(renderedApp.state('comparison')).toEqual(['Colorado', 'ACADEMY 20']);
+    
+    medianIncomeButton.simulate('click');
+    expect(renderedApp.state('comparison')).toEqual(['Colorado', 'ACADEMY 20']);
+    
+    povertyButton.simulate('click');
+    expect(renderedApp.state('comparison')).toEqual([null, 'ACADEMY 20']);
+
+    
+  });
+
   it('Should render the chart when the chart icon is clicked in the comparison card', () => {
     const renderedApp = mount(<App />);
     const clickedCard1 = renderedApp.find('.card-content').at(1);
