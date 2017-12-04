@@ -59,7 +59,8 @@ class App extends Component {
 
         comparison[index] = null;
         this.setState({
-          comparison
+          comparison,
+          chartStatus: false
         });
       }
     }
