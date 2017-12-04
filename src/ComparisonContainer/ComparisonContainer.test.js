@@ -48,7 +48,7 @@ describe('ComparisonContainer test', () => {
   it('Should render two standard cards with the selected class and a middle comparison card when passed two valid comparisons', () => {
     const mockFunc = jest.fn();
 
-    mockFunc.mockReturnValue(true);
+    mockFunc.mockReturnValue({});
     const renderedComparisonContainer = 
       mount(<ComparisonContainer 
         cards={[{Colorado: {2003: 0.5, 2004: 0.6}}, {['ADAMS COUNTY 14']: {2003: 0.5, 2004: 0.6}}]} 
