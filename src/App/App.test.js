@@ -74,6 +74,7 @@ describe('App test', () => {
     expect(renderedApp.find('CardContainer').find('.selected').length).toEqual(2);
     expect(renderedApp.state('comparison')).toEqual(['ACADEMY 20', 'ADAMS COUNTY 14']);        
   });
+
   it('Should remove a district name from the comparisons array and remove the selected class when selected twice', () => {
     const renderedApp = mount(<App />);
 

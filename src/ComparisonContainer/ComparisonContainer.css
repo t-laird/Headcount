@@ -1,28 +1,34 @@
+/* main styles */
+/* Nav styles */
+/* Card styles */
+/* apple-icon styles */
+/* Comparison styles */
+/* Chart styles */
 .ComparisonContainer {
   display: flex;
   flex-direction: column; }
   .ComparisonContainer .instructions {
     display: flex;
     justify-content: space-around;
-    width: 690px;
-    margin-bottom: -12px; }
+    margin-bottom: -12px;
+    width: 690px; }
     .ComparisonContainer .instructions h5 {
-      margin: 0px;
       color: grey;
-      font-style: italic; }
+      font-style: italic;
+      margin: 0px; }
   .ComparisonContainer .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border: 1px dashed black;
     margin: 15px auto 0;
-    width: 780px;
-    border: 1px dashed black; }
+    width: 780px; }
     .ComparisonContainer .cards h3 {
       color: #ff4d4d;
-      width: 100%;
-      text-align: center;
       font-size: 18pt;
-      margin: 20px auto; }
+      text-align: center;
+      margin: 20px auto;
+      width: 100%; }
 
 @media screen and (max-width: 945px) {
   .ComparisonContainer {

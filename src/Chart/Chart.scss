@@ -1,45 +1,50 @@
+@import '../variable.scss';
+
 .Chart {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0px auto;
+
+  background: $chart-background;
+  border: $solid-border;
   border-radius: 5px;
-  margin-top: 30px;
+  box-shadow: $chart-box-shadow;
+
   height: 380px;
   width: 600px;
-  background-color: white;
-  border: 1px solid black;
-  box-shadow: 8px 8px 8px 8px darkgrey;
+  margin: 0px auto;
+  margin-top: 30px;
+  
   transition: 1s;
   &:hover {
-  box-shadow: 1px 1px 1px 1px darkgrey;
+    box-shadow: $chart-hover-box-shadow;
   }
-
-  
   .chart-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 600px;
-    height: 300px;
-    padding-top: 50px;
     position: absolute;
+
+    height: 300px;
+    width: 600px;
+    padding-top: 50px;
     svg {
       position: absolute;
+      
       width: 560px;
       padding-left: 40px;
-      // left: calc(50% - 300px);
     }
-
     .axis {
       display: flex;
-      height: 100%;
-      width: 40px;
       flex-direction: column-reverse;
       justify-content: space-between;
+
+      border-right: $solid-border;
+
+      height: 100%;
+      width: 40px;
       padding-right: 5px;
-      border-right: 1px solid black;
       span {
         text-align: right;
       }
@@ -49,61 +54,73 @@
   .chartNav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: nowrap;
-    width: 100%;
-    height: 40px;
+    justify-content: space-between;
+
+    border-bottom: $solid-border;
     box-sizing: border-box;
-    border-bottom: 1px solid black;
+
+    height: 40px;
+    width: 100%;
     h5 {
-      padding-left: 8px;
       margin: 0px;
       margin-top: 10px;
+      padding-left: 8px;
     }
     .district1key {
-      background-color: red;
+      display: inline-block;
+
+      background-color: $graph-color1;
       border-radius: 5px;
+
       height: 10px;
       width: 10px;
-      display: inline-block;
       margin-left: 10px;
     }
     .district2key {
-      background-color: blue;
+      display: inline-block;
+
+      background-color: $graph-color2;
       border-radius: 5px;      
+
       height: 10px;
       width: 10px;
-      display: inline-block;
       margin-left: 10px;          
     }
     button {
-      z-index: 10;
-      border-radius: 0px;
+      background: $main-color;
       border: none;
-      background: lighten(red, 15%);
+      border-radius: 0px;
+      
+      color: #fff;
+      cursor: pointer;
+      font-size: 14pt;
+
       width: 100px;
       margin-left: 100px;
-      color: #fff;
-      font-size: 14pt;
-      cursor: pointer;
+
+      z-index: 10;
       &:hover {
-        background: #506479;
+        background: $secondary-color;
       }
     }
   }
   
   ul {
-    width: 555px;
     display: flex;
-    padding: 0px;
-    margin-left: 45px;
     justify-content: space-between;
-    border-top: 1px solid black;
+
+    border-top: $solid-border;
+
+    width: 555px;
     margin-bottom: 8px;
+    margin-left: 45px;
+    padding: 0px;
     li {
       display: inline-block;
-      padding-top: 5px;
       text-align: center;
+
+      padding-top: 5px;
     }
   }
 }
