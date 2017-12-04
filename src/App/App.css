@@ -1,3 +1,9 @@
+/* main styles */
+/* Nav styles */
+/* Card styles */
+/* apple-icon styles */
+/* Comparison styles */
+/* Chart styles */
 .main-wrapper {
   display: flex; }
 
@@ -5,3 +11,8 @@
   display: flex;
   flex-direction: column;
   width: 100%; }
+
+.no-match {
+  color: #ff4d4d;
+  text-align: center;
+  margin: 20px 0 200px; }
