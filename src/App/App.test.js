@@ -133,7 +133,7 @@ describe('App test', () => {
     expect(renderedApp.state('currentDataFile')).toEqual('School aged children in poverty');
   });
 
-  it.only('Should remove Colorado when a data set not including Colorado is selected', () => {
+  it('Should remove Colorado when a data set not including Colorado is selected', () => {
     const renderedApp = mount(<App />);
     const medianIncomeButton = renderedApp.find('Nav').find('Button').at(4);
     const povertyButton = renderedApp.find('Nav').find('Button').at(5);
