@@ -1,6 +1,7 @@
 {
   "name": "headcount",
   "version": "0.1.0",
+  "homepage": "http://t6r6l5.github.io/Headcount",
   "private": true,
   "devDependencies": {
     "babel-eslint": "^8.0.3",
