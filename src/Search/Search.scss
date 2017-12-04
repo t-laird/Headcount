@@ -3,22 +3,25 @@
 
 .Search {
   display: flex;
-  justify-content: flex-end;
   align-items: center;  
-  margin: 0px auto;
-  width: 80%;
-  max-width: 750px;
+  justify-content: flex-end;
+
   font-size: 35px;
 
+  max-width: 750px;
+  width: 80%;
+  margin: 0px auto;
   input {
-    font-size: 35px;
-    padding-left: 5px;
-    height: 50px;
-    width: 0px;
     border: none;
     box-sizing: border-box;
+
     cursor: default;
+    font-size: 35px;
     transition-duration: 0.8s;
+
+    height: 50px;
+    width: 0px;
+    padding-left: 5px;
   }
   i {
     cursor: pointer;
@@ -28,8 +31,8 @@
 
 .Search.expanded {
   input {
-    width: calc(100% - 49px);
+    border-bottom: $solid-border;
     cursor: auto;
-    border-bottom: 1px solid black;
+    width: calc(100% - 49px);
   }
 }
