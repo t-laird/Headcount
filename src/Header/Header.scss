@@ -1,29 +1,25 @@
-// @import url('https://fonts.googleapis.com/css?family=Squada+One');
+@import '../variable.scss';
 
 .Header {
-  background: lighten(red, 15%);
-  // box-shadow: 5px 5px 5px 0px darkgrey;
-  // margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
+  background: $main-color;
   h1 {
+    font-size: 90px; 
     margin: 0px;
-    font-size: 90px;
-    // font-family: 'Squada One', sans-serif;
-    // letter-spacing: .06em;
-    // font-weight: 400; 
     span {
-      border: 1px solid black;
+      background: black;
+      border: $solid-border;
       border-radius: 50%;
+
+      color: $main-color;
       font-size: 12px;
-      padding: 5px;
+
       margin: 0px -30px 0px -25px;
-      background-color: black;
-      color: lighten(red, 15%);
-      // letter-spacing: 0;
+      padding: 5px;
     }
   }
 }
